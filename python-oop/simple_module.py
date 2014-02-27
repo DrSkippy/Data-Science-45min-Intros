@@ -33,7 +33,7 @@ class Dog(object):
         self.owner = "jane"
         self.word = "woof"
         
-    def speak(self):
+    def talk(self):
         """Return a statement about the attributes of this Dog."""
         s = "{}, my name is {}. i have {} legs and belong to {}.".format(
                 self.word
@@ -59,7 +59,7 @@ class Cat(object):
         self.owner = owner 
         self.word = "meow"
         
-    def speak(self):
+    def talk(self):
         """Return a statement about the attributes of this Dog."""
         s = "{}, my name is {}. i have {} legs and belong to {}.".format(
                 self.word
@@ -80,6 +80,6 @@ if __name__ == '__main__':
     sys.stdout.write("SPEAK, CAT!")
     print
     print
-    sys.stdout.write('"' + c.speak() + '"')
+    sys.stdout.write('"' + c.talk() + '"')
     print
     print
