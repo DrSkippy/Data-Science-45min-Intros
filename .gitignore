@@ -1,4 +1,5 @@
 *.py[cod]
+*.swp
 
 # C extensions
 *.so
@@ -33,3 +34,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# silly osx 
+.DS_Store
