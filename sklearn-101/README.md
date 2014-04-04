@@ -20,7 +20,7 @@ The capability of the full [``sklearn`` package](http://scikit-learn.org/stable/
 
 The majority of this material was collected by combining pieces of the official docs (which are possibly the pinnacle of package documentation) and assorted other online materials. Instead of replicating a bunch of awesome information here, I'll suggest you read the [Quick Start](http://scikit-learn.org/stable/tutorial/basic/tutorial.html) and as much of the [tutorial](http://scikit-learn.org/stable/tutorial/statistical_inference/index.html) as you like before getting started with this. 
 
-If you want to explore the IPython Notebook without running Python on your own machine, you can also view it at [nbviewer]().
+If you want to explore the IPython Notebook without running Python on your own machine, you can also view it at [nbviewer](http://nbviewer.ipython.org/github/DrSkippy27/Data-Science-45min-Intros/blob/master/sklearn-101/sklearn-101.ipynb).
 
 Enjoy! 
 
