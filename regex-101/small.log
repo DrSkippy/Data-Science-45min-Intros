@@ -1,0 +1,7 @@
+[2014-05-19 20:59:21,303][storm.petrel][DEBUG]Got chunk
+[2014-05-19 20:59:21,499][storm.petrel][DEBUG]Got chunk
+[2014-05-19 20:59:21,995][storm.petrel][DEBUG]Got chunk
+[2014-05-19 20:59:21,996][storm.petrel][DEBUG]Roll: duration (1>=1)
+[2014-05-19 20:59:21,996][storm.petrel][DEBUG]Processes triggered
+[2014-05-19 20:59:22,001][storm.petrel][DEBUG]recsize=1746308, twitter-decahose, ts=1400533161, dur=1
+[2014-05-19 20:59:22,006][storm.petrel][DEBUG]Roll: duration (1>=1)
