@@ -202,6 +202,8 @@ There are a lot of avenues to further explore the capabilities of regular expres
     - there are other [character classes](http://www.zytrax.com/tech/web/regex.htm#special) that I didn't mention. 
 - ``grep`` vs. ``egrep`` vs. ``fgrep`` 
     - Though ``egrep`` is deprecated, it is the same as using ``grep -E``. This extends ``grep`` to "extended ``grep``". Additionally, there is ``grep -F`` which does not evaluate the expression being used for matching. That is, if you're searching for plain text (literal characters), ``fgrep`` should be faster to finish searching and possibly matching. 
+- don't reinvent the wheel
+    - for commonly-used pattern matching, there are [inventories](http://regexlib.com/DisplayPatterns.aspx) of expressions to use
 - don't use regex for all of your parsing
     - particularly, don't try to [parse HTML](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454?stw=2#1732454)
 
