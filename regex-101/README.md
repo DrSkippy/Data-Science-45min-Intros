@@ -178,7 +178,9 @@ To be slightly more explicit, I'll build up to this example. The general story i
 
 Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. Sad panda is sad, but sad panda is very powerful. 
 
-![powerful panda](./panda.jpg "escaping. deal with it.")
+<img align="right" src="panda.jpg" alt="powerful panda"></img>
+
+<!-- ![powerful panda](./panda.jpg "escaping. deal with it.") -->
 
 ### OR-ing (alternation)
 
