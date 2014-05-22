@@ -1,5 +1,6 @@
 # Regex 101: Building Blocks 
 
+Josh Montague, 2014-05-23
 
 ### Build notes
 
