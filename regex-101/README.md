@@ -3,18 +3,18 @@
 
 ### Build notes
 
-These examples were designed using ``grep`` 2.10 on Ubuntu 12.04. If using something else (especially OS X), YMMV. 
+These examples were designed using ``grep`` 2.10 and ``sed`` 4.2.1 on Ubuntu 12.04. If using something else (especially OS X), ymmv. This walk-through assumes approximately zero previous knowledge of regular expressions or command line tools like ``grep``, or ``sed``. We'll use them to learn stuff, but you can read the ``man`` pages for more intimate details on how they work. 
 
-[ some intro notes about the plan ]
+## Background
 
-don't be redundant here, so keep it short > something about context of using GNU ``grep -e`` as the "platform" for testing regular expressions, but generally applicable to Python, vim, ``sed``, ..., though each has it's subtlties and additional features.
+There are many places to use regular expressions ("regex"). Most environments and programs (Python, vim, \*sh commands like ``grep``, ...) include the concept, but may introduce subtlties in the handling of expressions (paricularly escaping characters). For consistency, we're going to use ``grep`` for most of our regex pattern matching. This approach is pretty readable which is a win: ``$ grep "[PATTERN]" [FILE]``. 
 
-note about extra features of -e, specifically OR
- 
-
-I used these two great resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class.  
+I used these two resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class.  
 - [zytrax](http://www.zytrax.com/tech/web/regex.htm)
 - [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
+
+Following the [Zed Shaw](http://learncodethehardway.org/) philosophy of learning, you're advised to actually smash your fingers onto the appropriate keys to recreate the examples here. And though we'll cruise through this the first time, revisit it occasionally for ideal retention. 
+
 
 ### Start with the bad news
 
@@ -29,45 +29,18 @@ Though extremely powerful, regular expressions ("regex") can be ungodly awful to
     ](?:(?:\r\n)?[ \t])*)(?:\.(?:(?:\r\n)?[ \t])*(?:[^()<>@,;:\\".\[\] \000-\031]+
     ...
 
-This is basically a crime against humanity in terms of the [Unix philosophy](http://en.wikipedia.org/wiki/Unix_philosophy). By continuously appending edge cases to this regex, it's now completely intractable. However, when used with care, tiny pieces of regex are incredibly powerful. Below is an introduction to some of the fundamental units of a regex. The beauty of the regex is that once you learn the building blocks, you can combine them in infinitely-extensible ways. Just don't build a single-regex, 100-line email address parser, please. 
-
-
-### Background
-
-RE v. ERE (de facto standard) now
-
-
-### Context
-
-*lots* of overlap, but subtle differences between the various places you can match patterns with a regular expression: 
-
-- shell commands (eg. GNU ``grep``, ``sed``) 
-
-- vi(m) 
-
-- Python  
-
-We'll use the GNU ``grep`` for our examples. This is nice because it allows for multiple expressions. From the ``grep`` docs:
-
-    grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
-    ...
-    -e PATTERN, --regexp=PATTERN
-                  Use PATTERN as the pattern.  This can be used to specify multiple search patterns, or to protect a pattern beginning with a hyphen (-).  (-e is specified by
-                  POSIX.)
-    ...
-
-Following the [Zed Shaw](http://learncodethehardway.org/) philosophy of learning, you're advised to actually smash your fingers onto the appropriate keys to recreate the examples here. And though we'll cruise through this the first time, revisit it occasionally for retention. 
+This is basically a crime against humanity in terms of the [Unix philosophy](http://en.wikipedia.org/wiki/Unix_philosophy). By continuously appending edge cases to this regex, it's now completely intractable. However, when used with care, tiny pieces of regex are incredibly powerful. Below is an introduction to some of the fundamental units of a regex. The beauty of the regex is that once you learn the building blocks, you can combine them in infinitely-extensible ways. Just don't build a single-expression, 100-line email address parser, please. 
 
 
 ### Vocabulary 
 
-*literal* - a character used to match in a search e.g. the ``a`` in ``bat``, or the ``og`` in ``dog`` can both be considered literal strings
+*literal*: a character used to match in a search e.g. the ``a`` in ``bat``, or the ``og`` in ``dog`` can both be considered literal strings
 
-*metacharacters* - (includes *anchors* that deal with line position; and *modifiers* that modify the range, e.g ``*``, ``[``, ``]``, ``\]`` 
+*metacharacters*: *anchors* that deal with line position, and *modifiers* that deal with counting and specifying ranges, e.g ``*``, ``[``, ``]``. 
 
-*target string* - string to be searched for the pattern
+*target string*: string to be searched by the pattern
 
-*escape sequence* - combination of escape metacharacter ``\`` and literal(s). each metacharacter desired to be treated as a literal gets escaped
+*escape sequence*: combination of escape metacharacter ``\`` and literal(s). Each metacharacter desired to be treated as a literal gets escaped
 
 
 ## Simple matching
@@ -202,7 +175,7 @@ To be slightly more explicit, I'll build up to this example. The general story i
     # now drop this regex into the sed expression and use back-references to change the order
     $ sed 's/\([0-9]\{4\}\)-\([0-9]\{2\}\)-\([0-9]\{2\}\)/\3-\2-\1/g' small.log     # BOOM
 
-Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. 
+Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. Sad panda is sad, but sad panda is powerful. 
 
 
 ### OR-ing (alternation)
