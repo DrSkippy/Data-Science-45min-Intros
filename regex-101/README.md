@@ -44,11 +44,11 @@ This is basically a crime against humanity in terms of the [Unix philosophy](htt
 
 Some simple literal character matching examples. Have a look at the ``small.log`` file, and check that the matching makes sense. 
 
-    $ grep -e"DEBUG" small.log 
-    $ grep -e"20:59:22" small.log
-    $ grep -e"]" small.log
-    $ grep -e"[" small.log          # note the difference; [ is a metacharacter! (more to come below) 
-    $ grep -e"1>" small.log
+    $ grep "DEBUG" small.log 
+    $ grep "20:59:22" small.log
+    $ grep "]" small.log
+    $ grep "[" small.log          # note the difference; [ is a metacharacter! (more to come below) 
+    $ grep "1>" small.log
 
 
 ## Metacharacters
@@ -59,25 +59,25 @@ For these examples, really take a second to really analyze the resulting match, 
 
 ``[ ]`` - (L and R square brackets) used together and denote a list of characters to match against each character position in the target (once and only once). 
 
-    $ grep -e"[01]" small.log
+    $ grep "[01]" small.log
 
 ``-`` - (dash) within brackets, specifies a range of characters to match against the target (there are additional "[special ranges](http://www.zytrax.com/tech/web/regex.htm#special)" that may (or may not) be available on your system). The next three lines should all return the same matches: 
 
-    $ grep -e"[0123456789]" small.log
-    $ grep -e"[0-9]" small.log              # (I think this one is the most intelligible)
-    $ grep -e"[[:digit:]]" small.log
+    $ grep "[0123456789]" small.log
+    $ grep "[0-9]" small.log              # (I think this one is the most intelligible)
+    $ grep "[[:digit:]]" small.log
 
-    $ grep -e"[a-z]" small.log              # note the differences b/w these three
-    $ grep -e"[A-Z]" small.log
-    $ grep -e"[a-Z]" small.log
+    $ grep "[a-z]" small.log              # note the differences b/w these three
+    $ grep "[A-Z]" small.log
+    $ grep "[a-Z]" small.log
 
-    $ grep -e"[0-9]]" small.log             # R square bracket is now *outside* the range character, so it's literal
-    $ grep -e"[0-9\]]" small.log            # same matches as ^, but *not* identical pattern -- can you see why? 
+    $ grep "[0-9]]" small.log             # R square bracket is now *outside* the range character, so it's literal
+    $ grep "[0-9\]]" small.log            # same matches as ^, but *not* identical pattern -- can you see why? 
 
 ``^`` - (caret / circumflex) *within* brackets, negates the expression 
 
-    $ grep -e"[^a-m]" small.log
-    $ grep -e"[^a-m0-5]k" small.log         # combined range (*for a single character match*) is specified 
+    $ grep "[^a-m]" small.log
+    $ grep "[^a-m0-5]k" small.log         # combined range (*for a single character match*) is specified 
                                             #   w/o spaces 
                                             # --note: this range matches any *one* character that is not in 
                                             #   a-m *or* any digit not in 0-5. not one followed by the other. 
