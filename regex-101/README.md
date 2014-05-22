@@ -176,8 +176,9 @@ To be slightly more explicit, I'll build up to this example. The general story i
     # now drop this regex into the sed expression and use back-references to change the order
     $ sed 's/\([0-9]\{4\}\)-\([0-9]\{2\}\)-\([0-9]\{2\}\)/\3-\2-\1/g' small.log     # BOOM
 
-Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. Sad panda is sad, but sad panda is powerful. 
+Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. Sad panda is sad, but sad panda is very powerful. 
 
+![powerful panda](./panda.jpg "escaping. deal with it.")
 
 ### OR-ing (alternation)
 
