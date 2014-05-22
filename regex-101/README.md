@@ -1,17 +1,24 @@
+# Regex 101: Building Blocks 
 
-built on Ubuntu 12.04
+
+### Build notes
+
+These examples were designed using ``grep`` 2.10 on Ubuntu 12.04. If using something else (especially OS X), YMMV. 
+
+[ some intro notes about the plan ]
 
 don't be redundant here, so keep it short > something about context of using GNU ``grep -e`` as the "platform" for testing regular expressions, but generally applicable to Python, vim, ``sed``, ..., though each has it's subtlties and additional features.
 
 note about extra features of -e, specifically OR
  
 
-refs:
+I used these two great resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class.  
 - [zytrax](http://www.zytrax.com/tech/web/regex.htm)
 - [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
 
-Bad example, but impressive: [RFC822 email validation regular expression](http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html). Here's
-the first few lines:
+### Start with the bad news
+
+Though extremely powerful, regular expressions ("regex") can be ungodly awful to read. Regex is a mighty sword that can also be wielded for evil. Here's an example; these are the first few lines of the famous [RFC822 email validation regular expression](http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html) (check the link to see the whole thing): 
 
     (?:(?:\r\n)?[ \t])*(?:(?:(?:[^()<>@,;:\\".\[\] \000-\031]+(?:(?:(?:\r\n)?[ \t]
     )+|\Z|(?=[\["()<>@,;:\\".\[\]]))|"(?:[^\"\r\\]|\\.|(?:(?:\r\n)?[ \t]))*"(?:(?:
@@ -22,30 +29,15 @@ the first few lines:
     ](?:(?:\r\n)?[ \t])*)(?:\.(?:(?:\r\n)?[ \t])*(?:[^()<>@,;:\\".\[\] \000-\031]+
     ...
 
+This is basically a crime against humanity in terms of the [Unix philosophy](http://en.wikipedia.org/wiki/Unix_philosophy). By continuously appending edge cases to this regex, it's now completely intractable. However, when used with care, tiny pieces of regex are incredibly powerful. Below is an introduction to some of the fundamental units of a regex. The beauty of the regex is that once you learn the building blocks, you can combine them in infinitely-extensible ways. Just don't build a single-regex, 100-line email address parser, please. 
 
-### background
+
+### Background
 
 RE v. ERE (de facto standard) now
 
 
-### setup notes 
-
-work on a data science server so we're all using the same settings / environments
-
-    wget (dropbox link for poolboy code)
-
-### terminology
-
-*literal* - a character used to match in a search e.g. the ``a`` in ``bat``, or the ``og`` in ``dog`` can both be considered literal strings
-
-*metacharacters* - (includes *anchors* that deal with line position; and *modifiers* that modify the range, e.g ``*``, ``[``, ``]``, ``\]`` 
-
-*target string* - string to be searched for the pattern
-
-*escape sequence* - combination of escape metacharacter ``\`` and literal(s). each metacharacter desired to be treated as a literal gets escaped
-
-
-### context
+### Context
 
 *lots* of overlap, but subtle differences between the various places you can match patterns with a regular expression: 
 
@@ -64,8 +56,21 @@ We'll use the GNU ``grep`` for our examples. This is nice because it allows for 
                   POSIX.)
     ...
 
+Following the [Zed Shaw](http://learncodethehardway.org/) philosophy of learning, you're advised to actually smash your fingers onto the appropriate keys to recreate the examples here. And though we'll cruise through this the first time, revisit it occasionally for retention. 
 
-## simple matching
+
+### Vocabulary 
+
+*literal* - a character used to match in a search e.g. the ``a`` in ``bat``, or the ``og`` in ``dog`` can both be considered literal strings
+
+*metacharacters* - (includes *anchors* that deal with line position; and *modifiers* that modify the range, e.g ``*``, ``[``, ``]``, ``\]`` 
+
+*target string* - string to be searched for the pattern
+
+*escape sequence* - combination of escape metacharacter ``\`` and literal(s). each metacharacter desired to be treated as a literal gets escaped
+
+
+## Simple matching
 
 Some simple literal character matching examples. Have a look at the ``small.log`` file, and check that the matching makes sense. 
 
@@ -76,9 +81,9 @@ Some simple literal character matching examples. Have a look at the ``small.log`
     $ grep -e"1>" small.log
 
 
-## metacharacters
+## Metacharacters
 
-### brackets, ranges, negation
+### Brackets, ranges, negation
 
 For these examples, really take a second to really analyze the resulting match, so the pattern matching concepts become as clear as possible. Some of them are subtle!
 
@@ -107,7 +112,7 @@ For these examples, really take a second to really analyze the resulting match, 
                                             # --note: this range matches any *one* character that is not in 
                                             #   a-m *or* any digit not in 0-5. not one followed by the other. 
 
-### anchors 
+### Anchors 
 
 When you need to make your match pattern include physical positions within the line, we can use the following three characters:
 
@@ -131,7 +136,7 @@ When you need to make your match pattern include physical positions within the l
 See also: ``\<``, ``\>``, ``\b``
 
 
-### iteration / repetition
+### Iteration / repetition
 
 *note about greedy matching*
 
@@ -144,7 +149,7 @@ To control the *number of times* a character is matched, it should be followed b
 
 ``+`` = the plus sign matches *1 or more* occurrences of the preceding character
 
-NB: the ``+`` metacharacter (along with ``?``, ``+``, ``{``, ``|``, ``(``, ``)`` ) lose their special meaning in *basic* regular expressions e.g. the default behavior of ``$ grep PATTERN FILE``. In order to use these as iteration metacharacters in the context of basic ``grep``, they must be escaped. Alternatively, ``grep`` can be called in *extended* regular expression mode with the ``-E`` option: ``$ grep -E PATTERN FILE`` (there was once an ``egrep`` command that was synonymous but is deprecated).  
+NB: the ``+`` metacharacters (and, really, the whole set: ``?``, ``+``, ``{``, ``|``, ``(``, ``)`` ) lose their special meaning in *basic* regular expressions e.g. the default behavior of ``$ grep PATTERN FILE``. In order to use these as iteration metacharacters in the context of basic ``grep``, they must be escaped. Alternatively, ``grep`` can be called in *extended* regular expression mode with the ``-E`` option: ``$ grep -E PATTERN FILE`` (there was once an ``egrep`` command that was synonymous but is deprecated).  
 
     $ grep "0+" small.log                   # matches a literal 0 followed by a literal +
     $ grep "0\+" small.log                  # + becomes iteration metachar
@@ -152,9 +157,8 @@ NB: the ``+`` metacharacter (along with ``?``, ``+``, ``{``, ``|``, ``(``, ``)``
     
 ``?`` - the question mark matches *0 or 1* occurrences of the preceding character 
 
-    come back to this one - not getting to behave as expected (greedy?) 
-
-*[ WIP ]*
+    $ grep -E "15?1" small.log              # (note about my confusion here)
+    $ grep -E "colou?r" small.log           # English spelling check
 
 ``{ }`` - the curly brackets specify a count or a range or occurences to match the preceding pattern. If used with a single number eg ``{n}``, pattern matches preceding character exactly ``n`` times. With a range eg ``{n,m}``, pattern matches at least ``n`` times, but not more than ``m`` times. With a single number + comma eg ``{n,}``, pattern matches preceding character at least ``n`` times
 
@@ -164,30 +168,68 @@ NB: the ``+`` metacharacter (along with ``?``, ``+``, ``{``, ``|``, ``(``, ``)``
     $ grep -E "15{2,}1" small.log 
  
 
-### grouping and OR-ing (alternation)
+### Grouping 
 
-*[ WIP ]*
+*Change-up!*
+
+So far, we've been using ``grep`` as a way to both match regex and, conveniently (most of the time), highlight the matches thanks to the default Ubuntu ``.bashrc`` settings. ``grep`` is fundamentally about matching pattern and returning the matching *lines*. What we're about to work through is a little more subtle and is better suited for demonstration with ``sed`` than ``grep``. Thankfully, we're working on a beautiful Linux system that has both of these ready to rock. If you want to, you can go ahead and read the ``man`` page for ``sed``, but for the sake of this little demonstration, all you need to know is the following syntax:
+
+    $ sed 's/[REGEX PATTERN]/[REPLACEMENT PATTERN]/g' FILE 
+
+``sed``'s ``s/thing1/thing2/g`` pattern is often used to search for ``thing1`` and replace it with ``thing2`` (everywhere, in this case). So we'll continue to use small.log as our ``FILE`` and we'll explore the results of our regex by adding the pattern between the first two slashes, and then selecting groups (or subexpressions) into the replacement pattern (between the second and third slashes). A quick example to make the use of ``sed`` super clear:
+
+    $ sed 's/[0-9]/Q/g' small.log 
+
+One unfortunate gotcha: ``sed`` - like just about every environment where you want to use regex - has it's own rules about escaping. The escape character is still ``\`` but you may need to use one where you didn't have to in the previous ``grep`` examples. The example below illustrates this.
+
+``( )`` - the open and close parantheses ("parens") group parts of the expression into subexpressions (or submatches, or groups). Awesomely, these matches are actually captured into variables so you can reuse them. This is called back-referencing, and the variables are accessed via ``\N`` where ``N`` is the order of the matching subexpression. 
+
+To be slightly more explicit, I'll build up to this example. The general story is as follows: 
+
+> You have a log file where the dates were stored in ``yyyy-mm-dd`` format. You needed them to be in ``dd-mm-yyyy`` format using only your shell command line tools.
+
+    # recall the grep approach to capturing a certain number of characters that match a range
+    [0-9]{4}                      # matches four digits in a row 
+    [0-9]{4}-[0-9]{2}-[0-9]{2}    # matches a typical date format
+    # now we want to group each set of numbers into a subexpression so we have access to 
+    #   the year, month, and day in separate variables. Remember to escape the parens:
+    \([0-9]{4}\)-\([0-9]{2}\)-\([0-9]{2}\)    
+    # when this matches a valid date, \1 stores the year, \2 the month, and \3 the day
+    # the line above is *almost* our finished regex, which we can drop into the sed
+    #   command. the only remaining sadness is that the curly brackets need to be
+    #   escaped within a sed expression. escaping makes for a sad panda.
+    \([0-9]\{4\}\)-\([0-9]\{2\}\)-\([0-9]\{2\}\)
+    # now drop this regex into the sed expression and use back-references to change the order
+    $ sed 's/\([0-9]\{4\}\)-\([0-9]\{2\}\)-\([0-9]\{2\}\)/\3-\2-\1/g' small.log     # BOOM
+
+Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. 
 
 
+### OR-ing (alternation)
 
+*Back to ``grep``!*
 
+``|`` - the pipe (or vertical bar) is an "or" and "alternation" and will match either the expression on the left or right side of the symbol. This can be combined with parens within a character string, or also used to OR entire expressions.
 
+    $ grep "05\|22" small.log 
+    $ grep -E "[0-9]{8}|[a-Z]{10}" small.log    # recall -E escaping 
+    $ grep -E "o(l|r)" small.log
+    $ grep "o\(l\|r\)" small.log
 
-## appendix
+-------
+
+### Notes 
+
+There are a lot of avenues to further explore the capabilities of regular expressions. We covered most of the building blocks, but here are a handful of possible next steps and assorted other notes to learn from while you're waiting for the 201 session of the class: 
 
 - backreferences
+    - there are even more ways to use these... for example, define a group so that you can reuse that group in your *matching expression* instead of just the result. 
 - more character classes
-- submatches / subexpressions
+    - there are other [character classes](http://www.zytrax.com/tech/web/regex.htm#special) that I didn't mention. 
 - ``grep`` vs. ``egrep`` vs. ``fgrep`` 
-
-
-
-
-
-
-footnote:
-
-note about parsing html with regex [SO link](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454?stw=2#1732454)
+    - Though ``egrep`` is deprecated, it is the same as using ``grep -E``. This extends ``grep`` to "extended ``grep``". Additionally, there is ``grep -F`` which does not evaluate the expression being used for matching. That is, if you're searching for plain text (literal characters), ``fgrep`` should be faster to finish searching and possibly matching. 
+- don't use regex for all of your parsing
+    - particularly, don't try to [parse HTML](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454?stw=2#1732454)
 
 
 
