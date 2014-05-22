@@ -10,10 +10,6 @@ These examples were designed using ``grep`` 2.10 and ``sed`` 4.2.1 on Ubuntu 12.
 
 There are many places to use regular expressions ("regex"). Most environments and programs (Python, vim, \*sh commands like ``grep``, ...) include the concept, but may introduce subtlties in the handling of expressions (paricularly escaping characters). For consistency, we're going to use ``grep`` for most of our regex pattern matching. This approach is pretty readable which is a win: ``$ grep "[PATTERN]" [FILE]``. 
 
-I used these two resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class.  
-- [zytrax](http://www.zytrax.com/tech/web/regex.htm)
-- [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
-
 Following the [Zed Shaw](http://learncodethehardway.org/) philosophy of learning, you're advised to actually smash your fingers onto the appropriate keys to recreate the examples here. And though we'll cruise through this the first time, revisit it occasionally for ideal retention. 
 
 
@@ -201,6 +197,9 @@ Yes, the escaping is terrible. But once you do it a bit, you start to see throug
 
 There are a lot of avenues to further explore the capabilities of regular expressions. We covered most of the building blocks, but here are a handful of possible next steps and assorted other notes to learn from while you're waiting for the 201 session of the class: 
 
+I used these two resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class: 
+    - [zytrax](http://www.zytrax.com/tech/web/regex.htm)
+    - [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
 - backreferences
     - there are even more ways to use these... for example, define a group so that you can reuse that group in your *matching expression* instead of just the result. 
 - more character classes
