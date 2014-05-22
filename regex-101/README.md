@@ -158,7 +158,7 @@ One unfortunate gotcha: ``sed`` - like just about every environment where you wa
 
 ``( )`` - the open and close parantheses ("parens") group parts of the expression into subexpressions (or submatches, or groups). Awesomely, these matches are actually captured into variables so you can reuse them. This is called back-referencing, and the variables are accessed via ``\N`` where ``N`` is the numbered order of the matching subexpression (1, 2, ...). 
 
-To be slightly more explicit, I'll build up to this example. The general story is as follows: 
+To be slightly more explicit, I'll build up to this example. The mission is as follows: 
 
 > You have a log file where the dates were stored in ``yyyy-mm-dd`` format. You needed them to be in ``dd-mm-yyyy`` format using only your shell command line tools.
 
@@ -171,7 +171,7 @@ Now we want to group each set of numbers into a subexpression so we have access 
 
     \([0-9]{4}\)-\([0-9]{2}\)-\([0-9]{2}\)    
 
-When this matches a valid date, ``\1`` stores the year, ``\2`` the month, and ``\3`` the day the line above is *almost* our finished regex, which we can drop into the ``sed`` command. the only remaining sadness is that the curly brackets need to be escaped within a ``sed`` expression. escaping makes for a sad panda
+When this matches a valid date, ``\1`` stores the year, ``\2`` the month, and ``\3`` the day the line above is *almost* our finished regex, which we can drop into the ``sed`` command. The only remaining sadness is that the curly brackets need to be escaped within a ``sed`` expression. Escaping makes for a sad panda
 
     \([0-9]\{4\}\)-\([0-9]\{2\}\)-\([0-9]\{2\}\)
 
@@ -181,9 +181,7 @@ Now drop this regex into the ``sed`` expression and use back-references to chang
 
 Yes, the escaping is terrible. But once you do it a bit, you start to see through the escaping and identify the underlying structures: the groups, the ranges, the anchors, etc. Sad panda is sad, but sad panda is very powerful. 
 
-<center>
 ![powerful panda](./panda.jpg "escaping. deal with it.")
-</center>
 
 
 ### OR-ing (alternation)
