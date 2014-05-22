@@ -191,6 +191,9 @@ Yes, the escaping is terrible. But once you do it a bit, you start to see throug
     $ grep -E "o(l|r)" small.log
     $ grep "o\(l\|r\)" small.log
 
+
+*the end*
+
 -------
 
 ### Notes 
@@ -198,18 +201,23 @@ Yes, the escaping is terrible. But once you do it a bit, you start to see throug
 There are a lot of avenues to further explore the capabilities of regular expressions. We covered most of the building blocks, but here are a handful of possible next steps and assorted other notes to learn from while you're waiting for the 201 session of the class: 
 
 I used these two resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class: 
-    - [zytrax](http://www.zytrax.com/tech/web/regex.htm)
-    - [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
-- backreferences
-    - there are even more ways to use these... for example, define a group so that you can reuse that group in your *matching expression* instead of just the result. 
-- more character classes
-    - there are other [character classes](http://www.zytrax.com/tech/web/regex.htm#special) that I didn't mention. 
-- ``grep`` vs. ``egrep`` vs. ``fgrep`` 
-    - Though ``egrep`` is deprecated, it is the same as using ``grep -E``. This extends ``grep`` to "extended ``grep``". Additionally, there is ``grep -F`` which does not evaluate the expression being used for matching. That is, if you're searching for plain text (literal characters), ``fgrep`` should be faster to finish searching and possibly matching. 
-- don't reinvent the wheel
-    - for commonly-used pattern matching, there are [inventories](http://regexlib.com/DisplayPatterns.aspx) of expressions to use
-- don't use regex for all of your parsing
-    - particularly, don't try to [parse HTML](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454?stw=2#1732454)
+- [zytrax](http://www.zytrax.com/tech/web/regex.htm)
+- [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
+
+backreferences:
+- there are even more ways to use these... for example, define a group so that you can reuse that group in your *matching expression* instead of just the result. 
+
+more character classes
+- there are other [character classes](http://www.zytrax.com/tech/web/regex.htm#special) that I didn't mention. 
+
+``grep`` vs. ``egrep`` vs. ``fgrep`` 
+- Though ``egrep`` is deprecated, it is the same as using ``grep -E``. This extends ``grep`` to "extended ``grep``". Additionally, there is ``grep -F`` which does not evaluate the expression being used for matching. That is, if you're searching for plain text (literal characters), ``fgrep`` should be faster to finish searching and possibly matching. 
+
+don't reinvent the wheel
+- for commonly-used pattern matching, there are [inventories](http://regexlib.com/DisplayPatterns.aspx) of expressions to use
+
+don't use regex for all of your parsing
+- particularly, don't try to [parse HTML](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454?stw=2#1732454)
 
 
 
