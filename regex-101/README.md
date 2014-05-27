@@ -108,8 +108,6 @@ See also: ``\<``, ``\>``, ``\b``
 
 ### Iteration / repetition
 
-*note about greedy matching*
-
 To control the *number of times* a character is matched, it should be followed by an iteration (or repetition) metacharacter. Note that the output coloring for matched patterns is off for this section. Pay attention to the lines returned by ``grep`` rather than the characters that it highlights in the output.
 
 ``*`` - the asterisk matches *0 or more* occurrences of the preceding character

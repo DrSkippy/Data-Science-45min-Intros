@@ -13,6 +13,8 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Data structures](bash-201)
 
+- [Regular Expressions](regex-101)
+
 
 ### Python
 
@@ -27,10 +29,18 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Maximum Likelihood Estimation](max-likelihood)
 
+- [Count-Min algorithm](count-min)
+
 
 ### Machine Learning
 
+- [Intro to ``scikit-learn``](sklearn-101))
+
+- [Intro to topic modeling](topic-modeling-101)
+
 - [Introduction to K-means clustering](k-means)
+
+- [Logistic Regression](logistic-regression)
 
 
 
