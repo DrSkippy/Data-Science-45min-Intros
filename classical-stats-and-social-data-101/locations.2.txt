@@ -1001,9 +1001,6 @@ None
 None
 
 Boulder, Colorado, United States
-Boulder, Colorado, United States
-Boulder, Colorado, United States
-Boulder, Colorado, United States
 None
 None
 Seattle, Washington, United States
@@ -2206,6 +2203,7 @@ None
 None
 None
 
+Boulder, Colorado, United States
 Shimane Prefecture, Japan
 United Kingdom
 None
@@ -5588,6 +5586,7 @@ Galicia, Spain
 Addis Ababa, Ādīs Ābeba, Ethiopia
 None
 None
+Boulder, Colorado, United States
 None
 None
 None
@@ -6026,6 +6025,7 @@ None
 None
 None
 None
+Boulder, Colorado, United States
 New York, United States
 None
 None
