@@ -12,6 +12,8 @@ There are many places to use regular expressions ("regex"). Most environments an
 
 Following the [Zed Shaw](http://learncodethehardway.org/) philosophy of learning, you're advised to actually smash your fingers onto the appropriate keys to recreate the examples here. And though we'll cruise through this the first time, revisit it occasionally for ideal retention. 
 
+Use this __Hack Button__ [![Hack DrSkippy/Data-Science-45min-Intros.git directly on Nitrous.IO](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-s-v1-7475db0cf93fe5d1e29420c928ebc614.png)](https://www.nitrous.io/hack_button?source=embed&runtime=nodejs&repo=DrSkippy%2FData-Science-45min-Intros.git&file_to_open=regex-101%2FREADME.md) to access a Linux instance with grep and sed already loaded and ready to go!
+
 
 ### Start with the bad news
 
@@ -198,7 +200,7 @@ Yes, the escaping is terrible. But once you do it a bit, you start to see throug
 
 There are a lot of avenues to further explore the capabilities of regular expressions. We covered most of the building blocks, but here are a handful of possible next steps and assorted other notes to learn from while you're waiting for the 201 session of the class: 
 
-I used these two resources for getting this outline layed out. The TLDP link has far more than is possible to fit in a 101 class: 
+I used these two resources for getting this outline laid out. The TLDP link has far more than is possible to fit in a 101 class: 
 - [zytrax](http://www.zytrax.com/tech/web/regex.htm)
 - [TLDP](http://www.tldp.org/LDP/abs/html/x17129.html)
 
