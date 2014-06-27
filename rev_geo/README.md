@@ -38,7 +38,7 @@ The [terminology](https://www.census.gov/geo/maps-data/data/pdfs/tiger/tgrshp201
 
 First, let's get some data. To download a zip file containing county data and then upzip it in a new `data` directory, please run the following script from the command line within the rev_geo directory.  
 <pre> make data/tl_2013_us_county.shp </pre>  
-When it finishes, you can view the files in `geo/data`, which were downloaded from the US Census Bureau. 
+When it finishes, you can view the files in the `rev_geo/data` directory. These files were downloaded from the US Census Bureau. 
 
 * [Click](https://www.census.gov/geo/maps-data/data/tiger.html) for more information about the census data used in this example.   
 
