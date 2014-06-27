@@ -148,6 +148,32 @@ The options are rather limited at this point.
 * considerations:   
 &nbsp; 1.  general solution for an efficiency grid indpendent of shapefile used.
 
+<pre>
+usage: rev_geo.py [-h] [-b GRID_BOUNDARIES] [-d DELTA] [-g]
+                  [-s SHAPE_FILE_PATH] [-t]
+                  [file_name]
+
+Reverse geo coder returns location info given a set of lon,lat
+
+positional arguments:
+  file_name             Input file name (optional).
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b GRID_BOUNDARIES, --bounding-box GRID_BOUNDARIES
+                        Set bounding box for region to include (defulat is
+                        [-185,15,-65,70])
+  -d DELTA, --delta DELTA
+                        Set the number of degrees between grid coords (default
+                        5)
+  -g, --use-saved-grid  Save grid or use previously saved version in
+                        data/grid.json
+  -s SHAPE_FILE_PATH, --shape-file-path SHAPE_FILE_PATH
+                        Set shapefile path (default:
+                        data/tl_2013_us_county.shp)
+  -t, --tweet-input     Set input as tweet payload instead of coordinates (in
+                        progress)
+</pre>
 ###Standard output
 The general form of the output includes the following:
 * county: str [county name]  
