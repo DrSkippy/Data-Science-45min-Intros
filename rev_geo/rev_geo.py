@@ -41,12 +41,12 @@ def topic_args():
             , "--bounding-box"
             , dest="grid_boundaries"
             , default="-185,15,-65,70"
-            , help="Set bounding box for region to include (defulat is [-185,15,-65,70])")
+            , help="Set bounding box for region to include (default: [-185,15,-65,70])")
     parser.add_argument("-d"
             , "--delta"
             , dest="delta"
             , default=5
-            , help="Set the number of degrees between grid coords (default 5)")
+            , help="Set the number of degrees between grid coords (default: 5)")
     parser.add_argument("-g"
             , "--use-saved-grid"
             , dest="use_saved_grid"

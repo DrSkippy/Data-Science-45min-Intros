@@ -161,11 +161,11 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   -b GRID_BOUNDARIES, --bounding-box GRID_BOUNDARIES
-                        Set bounding box for region to include (defulat is
+                        Set bounding box for region to include (default:
                         [-185,15,-65,70])
   -d DELTA, --delta DELTA
-                        Set the number of degrees between grid coords (default
-                        5)
+                        Set the number of degrees between grid coords
+                        (default: 5)
   -g, --use-saved-grid  Save grid or use previously saved version in
                         data/grid.json
   -s SHAPE_FILE_PATH, --shape-file-path SHAPE_FILE_PATH
