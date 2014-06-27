@@ -99,7 +99,7 @@ with fiona.open("data/tl_2013_us_county.shp") as fc:
 * [Click](http://toblerity.org/shapely/manual.html#object.contains) for documentation on evaluating if points are contained within shapes.
 
 <pre>
-#import fiona
+import fiona
 from shapely.geometry import Point, shape, Polygon, box
 
 #print records[0]
