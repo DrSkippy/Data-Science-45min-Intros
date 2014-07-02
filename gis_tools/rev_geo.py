@@ -109,7 +109,7 @@ if __name__ == '__main__':
         grid=build_grid()
     else:
         if not os.path.isfile("./data/grid.json"):
-            print >>sys.stderr, "file ./data/grid.json does not exist"
+            print >>sys.stderr, "creating ./data/grid.json"
             grid=build_grid()
             if not os.path.exists("./data"):
                 os.makedirs("./data")
