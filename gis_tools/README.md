@@ -138,7 +138,7 @@ Two tools that can be handy when working with shapefiles:
 
 [Example](http://bost.ocks.org/mike/map) that uses both tools.
 
-#Using gis_tools.py
+#Using rev_geo.py
 This utility takes coordinates and returns location information, but requires the user to point at the tl_2013_us_county.shp file. 
 * currently only available for US state/county info
 
@@ -149,7 +149,7 @@ The options are rather limited at this point.
 &nbsp; 1.  general solution for an efficiency grid indpendent of shapefile used.
 
 <pre>
-usage: gis_tools.py [-h] [-b GRID_BOUNDARIES] [-d DELTA] [-g]
+usage: rev_geo.py [-h] [-b GRID_BOUNDARIES] [-d DELTA] [-g]
                   [-s SHAPE_FILE_PATH] [-t]
                   [file_name]
 
@@ -178,7 +178,7 @@ optional arguments:
 The general form of the output includes the following:
 * county: str [county name]  
 * centroid: (longitude, latitude)  [center of county]  
-* coords: (longitude, latitude) [specific coords passed to gis_tools.py]  
+* coords: (longitude, latitude) [specific coords passed to rev_geo.py]  
 * GEOID: int(5) [state_code + county_code]  
 <pre>
 {"county": "Wahkiakum", 
@@ -189,7 +189,7 @@ The general form of the output includes the following:
 
 ###Example script
 <pre>
-$head data/centroids.txt | ./gis_tools.py -g > info.json
+$head data/centroids.txt | ./rev_geo.py -g > info.json
 $cat info.json
 {"county": "Cuming", "centroid": [-96.7885168, 41.9158651], "coords": [-96.7885168, 41.9158651], "GEOID": "31039"}
 {"county": "Wahkiakum", "centroid": [-123.4244583, 46.2946377], "coords": [-123.4244583, 46.2946377], "GEOID": "53069"}
