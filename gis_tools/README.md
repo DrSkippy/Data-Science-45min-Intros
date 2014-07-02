@@ -29,16 +29,16 @@ For example, we could create a target named `somePath/someFile.txt` that depends
 &nbsp; `echo $(notdir $@)`  
 &nbsp; `echo $<`  
  
- To see this example execute, run the following script from the command line within the rev_geo directory. 
+ To see this example execute, run the following script from the command line within the gis_tools directory. 
  <pre> make somePath/someFile.txt </pre> 
 
 # Shapefiles
 
 The [terminology](https://www.census.gov/geo/maps-data/data/pdfs/tiger/tgrshp2013/TGRSHP2013_TechDoc_Ch4.pdf) for shapefiles can be a little confusing, but the main ideas will be discussed below.
 
-First, let's get some data. To download a zip file containing county data and then upzip it in a new `data` directory, please run the following script from the command line within the rev_geo directory.  
+First, let's get some data. To download a zip file containing county data and then upzip it in a new `data` directory, please run the following script from the command line within the gis_tools directory.  
 <pre> make data/tl_2013_us_county.shp </pre>  
-When it finishes, you can view the files in the `rev_geo/data` directory. These files were downloaded from the US Census Bureau. 
+When it finishes, you can view the files in the `gis_tools/data` directory. These files were downloaded from the US Census Bureau. 
 
 * [Click](https://www.census.gov/geo/maps-data/data/tiger.html) for more information about the census data used in this example.   
 
@@ -189,7 +189,7 @@ The general form of the output includes the following:
 
 ###Example script
 <pre>
-$head data/centroids.txt | ./rev_geo.py > info.json
+$head data/centroids.txt | ./rev_geo.py -g > info.json
 $cat info.json
 {"county": "Cuming", "centroid": [-96.7885168, 41.9158651], "coords": [-96.7885168, 41.9158651], "GEOID": "31039"}
 {"county": "Wahkiakum", "centroid": [-123.4244583, 46.2946377], "coords": [-123.4244583, 46.2946377], "GEOID": "53069"}
