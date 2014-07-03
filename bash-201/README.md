@@ -1,6 +1,7 @@
 #BASH Data Structures
 ------------
 ------------
+This tutorial intends for you to run the code blocks directly in the command line.
 
 ## List
  
@@ -89,17 +90,18 @@ done
 ## Strings  (quote hell) 
 
 *  Hard vs soft quote
-    
-    var='$USER'
-    echo $var
+<pre>
+var='$USER'
+echo $var
 
-    var="$USER"
-    echo $var
-
+var="$USER"
+echo $var
+</pre>
 *  Combine quotes
-    
-    var='$USER='"$USER"
 
+<pre>
+var='$USER='"$USER"
+</pre>
 ## Examples
 *  Create globals
 <pre>
@@ -143,6 +145,7 @@ echo $var
 
 ## Quizes
 *  Quiz #1
+Given a set of tweets and grep statemnts, create files appropriately named based on the grep rules. Only change the indicated line.
 <pre>
 tmp=twitter.agg.piped
 if [ -f grep_rules.txt ]; then
@@ -150,11 +153,11 @@ if [ -f grep_rules.txt ]; then
         echo "file: $tmp for rule: $line"
         eval "$line"
         # --------------------
-        # -- fix line below -- 
+        # -- run script and debug line below -- 
 
         rname="${grep_stmt} | rules_to_file_name.py"
         
-        # -- fix line above --
+        # -- run script and debug line above --
         # --------------------
 
 
@@ -167,6 +170,7 @@ fi
 </pre>
 
 *  Quiz #2 
+Try to spot the problem with the quotes.
 <pre>
 # The following string resulted in a rule with value: "from:$USER" ; instead of value: "from:compston"
 curl -v -X POST -ustephen@gnip.com "https://api.gnip.com/replay/rules.json" -d '{"rules":[{"value":"from:$USER"}]}'
