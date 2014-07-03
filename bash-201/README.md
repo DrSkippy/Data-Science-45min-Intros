@@ -91,11 +91,11 @@ done
 
 *  Hard vs soft quote
 <pre>
-var='$USER'
-echo $var
+var='$USER'  
+echo $var  
 
-var="$USER"
-echo $var
+var="$USER"  
+echo $var  
 </pre>
 
 *  Combine quotes
