@@ -98,7 +98,9 @@ echo $var
 </pre>
 
 *  Combine quotes
+<pre>
 var='$USER='"$USER"
+</pre>
 
 ## Examples
 *  Create globals
@@ -121,6 +123,7 @@ echo `eval $cmd1` # be careful with back tics
 </pre>
 
 *  Back tic vs eval
+
 <pre>
 pwd
 eval pwd
@@ -148,10 +151,14 @@ if [ -f grep_rules.txt ]; then
     while read line; do                    
         echo "file: $tmp for rule: $line"
         eval "$line"
-
+        # --------------------
         # -- fix line below -- 
+
         rname="${grep_stmt} | rules_to_file_name.py"
-        # -- fix line above --        
+        
+        # -- fix line above --
+        # --------------------
+
 
         cmd="cat $tmp | $grep_stmt > twitter.agg.piped.${rname}.filter.piped &"
         eval "$cmd"
@@ -180,7 +187,4 @@ rname=$(echo "${grep_stmt}" |./rules_to_file_name.py)
 <pre>
 curl -v -X POST -ustephen@gnip.com "https://api.gnip.comreplay/rules.json" -d '{"rules":[{"value":"from:'"$USER"'"}]}'
 </pre>
-
-------------
-------------
 
