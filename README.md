@@ -43,9 +43,9 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 - [Logistic Regression](logistic-regression)
 
 
-### Geographic Information System tools
+### Geographic Information System 
 
-- [Introduction to shapefile utilties + reverse geo coding](gis_tools)
+- [Introduction to shapefile utilties + reverse geo coding (and Makefile)](gis_tools)
 
 
 
