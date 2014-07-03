@@ -34,13 +34,19 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 ### Machine Learning
 
-- [Intro to ``scikit-learn``](sklearn-101))
+- [Intro to ``scikit-learn``](sklearn-101)
 
 - [Intro to topic modeling](topic-modeling-101)
 
 - [Introduction to K-means clustering](k-means)
 
 - [Logistic Regression](logistic-regression)
+
+
+### Geographic Information Systems
+
+- [Introduction to shapefile utilties + reverse geo coding (and Makefile)](gis_tools)
+
 
 
 
