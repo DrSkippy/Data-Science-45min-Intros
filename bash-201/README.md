@@ -97,11 +97,13 @@ echo $var
 var="$USER"
 echo $var
 </pre>
+
 *  Combine quotes
 
 <pre>
 var='$USER='"$USER"
 </pre>
+
 ## Examples
 *  Create globals
 <pre>
