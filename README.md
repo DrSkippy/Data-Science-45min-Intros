@@ -34,7 +34,7 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 ### Machine Learning
 
-- [Intro to ``scikit-learn``](sklearn-101))
+- [Intro to ``scikit-learn``](sklearn-101)
 
 - [Intro to topic modeling](topic-modeling-101)
 
