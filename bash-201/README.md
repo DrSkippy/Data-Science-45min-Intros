@@ -100,7 +100,6 @@ echo $var
 </pre>
 
 *  Combine quotes
-
 <pre>
 var='$USER='"$USER"
 </pre>
@@ -126,7 +125,6 @@ echo `eval $cmd1` # be careful with back tics
 </pre>
 
 *  Back tic vs eval
-
 <pre>
 pwd
 eval pwd
