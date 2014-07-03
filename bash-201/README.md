@@ -125,6 +125,7 @@ echo `eval $cmd1` # be careful with back tics
 </pre>
 
 *  Back tic vs eval
+
 <pre>
 pwd
 eval pwd
