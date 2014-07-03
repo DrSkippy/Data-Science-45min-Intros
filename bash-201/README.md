@@ -89,18 +89,16 @@ done
 ## Strings  (quote hell) 
 
 *  Hard vs soft quote
-<pre>
-var='$USER'
-echo $var
+    
+    var='$USER'
+    echo $var
 
-var="$USER"
-echo $var
-</pre>
+    var="$USER"
+    echo $var
 
 *  Combine quotes
-<pre>
-var='$USER='"$USER"
-</pre>
+    
+    var='$USER='"$USER"
 
 ## Examples
 *  Create globals
