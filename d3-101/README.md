@@ -14,6 +14,14 @@ D3 101
 ### Traverse object {...}
 
 ## Selections
+Let's start by opening a blank template [here](http://data-science-6.gnip.com/~blehman/hello-d3.html). Press `option+command+j` and then type the following in the console:
+
+`d3.append('p')` 
+
+You receive a type error because you haven't selected anything to which you can append a paragraph. Now try the following:
+
+`d3.select('body').append('p').text("Look, I made a paragraph!")`
+
 Selections are arrays.
 
 \#foo        // `<any id="foo">`  
