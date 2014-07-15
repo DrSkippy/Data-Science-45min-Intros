@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tweet-driven documents</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script src="http://d3js.org/d3.v2.min.js"></script>
+<style type="text/css">
+    body {
+        background-color: #F5F8FA;
+    }
+    .handles {
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: #8899A6;
+        fill-opacity: 1 
+    }
+    .followers {
+        fill: #55ACEE;
+    }
+    .friends {
+        fill: #292F33;
+    }
+    .userinfo {
+        font-family: sans-serif;
+        font-size: 24px;
+        fill: #292F33;
+        fill-opacity: 1 
+    }
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// Globals
+var width = 1200,
+    height = 1400,
+    barheight = 500,
+    xaxis = 600,
+    textwidth = 200,
+    barscale,
+    tweet_data,
+    viz = d3.select("body").append("svg").attr("width", width).attr("height", height),//.on("click", dissappearbars()),
+    bars = viz.append("g").attr("class", "bars");
+
+// load JSON data
+d3.json("test_twitter_data_for_d3.json", function(data) { 
+    // so I can look at 'tweet_data' from the console
+    tweet_data = data.sort(function(a,b){ return b.actor.statusesCount - a.actor.statusesCount })
+    // scale for the bargraph
+    barscale = d3.scale.linear().domain([0, findmax()]).range([0, barheight])
+    //barscale = d3.scale.log().domain([1, findmax()]).range([1, barheight])
+    // draw axes
+    // xticks
+    // yticks
+    //drawfriends(5)
+    drawbars(5, "friends", returnfriends)
+    drawbars(-5, "followers", returnfollowers)
+    //drawfollowers(-5)
+    writehandles()
+} ) 
+
+function drawbars(offset, classname, metricgetter){
+    var barstodraw = bars
+        .selectAll(classname)
+        .data(tweet_data)
+        .enter()
+        .append("rect")
+        .attr("class", classname)
+    barstodraw
+        .attr("x", textwidth)
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + offset + 10 })
+        .attr("width", function(d){ return barscale(metricgetter(d)) })
+        .attr("height", (height/tweet_data.length)/5)
+           /* 
+        viz.on("click", function(){
+            barstodraw.transition().duration(2000).attr("width", 0)})
+        /* 
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) + 5 + 10 })
+        .attr("y", function(d){ return (xaxis - barscale(d.actor.friendsCount))})
+        .attr("width", 10)
+        .attr("height", function(d){ return barscale(d.actor.friendsCount) })
+        */
+}
+function writehandles(){
+    var handlelabels = viz.append("g").attr("class", "labels")
+    var handles = handlelabels
+        .selectAll("handles")
+        .data(tweet_data)
+        .enter()
+        .append("text")
+        .attr("class", "handles")
+    handles
+        .text(function(d){return "@" + d.actor.preferredUsername})
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + 10})
+        .attr("x", textwidth - 2)
+        .attr("dy", 10)
+        .style("text-anchor", "end")
+        .on("mouseover", userinfo())
+        .on("mouseout", function(){console.log("mousing out")})
+    /*
+        .text(function(d){return "@" + d.actor.preferredUsername})
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) + 10})
+        .attr("y", xaxis)
+        .attr("dy", function(d) {return 1})
+        .style("text-anchor", "start")
+        .attr("transform", function(d, i)
+            {return"rotate(90, "+ (i * (width/tweet_data.length) + 10) +", "+(xaxis) + ")"})
+      */  
+}
+
+function userinfo(){
+    return function(d, i){
+        console.log("mousing over")
+        var userinfoblock = viz.append("g").attr("class", "userinfo")
+        var userinfo = userinfoblock
+            .selectAll("userinfo")
+            .data(tweet_data)
+            .enter()
+            .append("text")
+            .attr("class", "userinfo")
+        userinfo
+            .text("hello")
+            .attr("x", 800)
+            .attr("y", 50) }
+            //.attr("transform", "translate(800,50)") }
+
+}
+
+// make bars dissapear (to draw new bars)
+function dissappearbars(){
+    return function(){ viz.selectAll("bars").remove() }
+}
+
+// find the max number of followers, so we can set the scale
+function findmax(){
+    var max = 0;
+    for (var i = 0; i < tweet_data.length; i++){
+        if (tweet_data[i].actor.followersCount >= max) { max = tweet_data[i].actor.followersCount}
+    }
+    return max }
+
+function returnfollowers(d){ return d.actor.followersCount }
+function returnfriends(d){ return d.actor.friendsCount }
+
+/*
+function drawfriends(offset){
+    var friends = bars
+        .selectAll("friends")
+        .data(tweet_data)
+        .enter()
+        .append("rect")
+        .attr("class", "friends")
+    friends
+        .attr("x", textwidth)
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + offset + 10 })
+        .attr("width", function(d){ return barscale(d.actor.friendsCount) })
+        .attr("height", (height/tweet_data.length)/5)
+        /* 
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) + 5 + 10 })
+        .attr("y", function(d){ return (xaxis - barscale(d.actor.friendsCount))})
+        .attr("width", 10)
+        .attr("height", function(d){ return barscale(d.actor.friendsCount) })
+        */
+// } 
+/*
+function drawfollowers(offset){
+    var followers = bars
+        .selectAll("followers")
+        .data(tweet_data)
+        .enter()
+        .append("rect")
+        .attr("class", "followers")
+    followers 
+        .attr("x", textwidth)
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + offset + 10 })
+        .attr("width", function(d){ return barscale(d.actor.followersCount) })
+        .attr("height", (height/tweet_data.length)/5)
+        /*
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) - 5 + 10})
+        .attr("y", function(d){ return (xaxis - barscale(d.actor.followersCount))})
+        .attr("width", 10)
+        .attr("height", function(d){ return barscale(d.actor.followersCount) })
+        */
+// }
+
+
+</script>
+</body>
+</html>
