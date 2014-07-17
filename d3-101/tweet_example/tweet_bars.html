@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tweet-driven documents</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script src="http://d3js.org/d3.v2.min.js"></script>
+<style type="text/css">
+    body {
+        background-color: #F5F8FA;
+    }
+    .handles {
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: #8899A6;
+        fill-opacity: 1 
+    }
+    .followers {
+        fill: #55ACEE;
+    }
+    .friends {
+        fill: #292F33;
+    }
+    .userinfo {
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: #292F33;
+        fill-opacity: 1 
+    }
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// Globals
+var width = 1200,
+    height = 1400,
+    barheight = 500,
+    xaxis = 600,
+    textwidth = 200,
+    barscale,
+    tweet_data;
+
+var viz = d3.select("body").append("svg").attr("width", width).attr("height", height),
+    bars = viz.append("g").attr("class", "bars"),
+    handlelabels = viz.append("g").attr("class", "labels"),
+    userinfoblock = viz.append("g").attr("class", "userinfoblock");
+
+// load JSON data
+d3.json("test_twitter_data_for_d3.json", function(data) { 
+    // so I can look at 'tweet_data' from the console
+    tweet_data = data.sort(function(a,b){ return b.actor.statusesCount - a.actor.statusesCount })
+    // scale for the bargraph
+    barscale = d3.scale.linear().domain([0, findmax()]).range([0, barheight])
+    writehandles()
+    drawbars(5, "friends", returnfriends)
+    drawbars(-5, "followers", returnfollowers)
+} ) 
+
+function drawbars(offset, classname, metricgetter){
+    var barstodraw = bars
+        .selectAll(classname)
+        .data(tweet_data)
+        .enter()
+        .append("rect")
+        .attr("class", classname)
+    barstodraw
+        .attr("x", textwidth)
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + offset + 10 })
+        .attr("width", function(d){ return barscale(metricgetter(d)) })
+        .attr("height", (height/tweet_data.length)/5)
+}
+function writehandles(){
+    var handles = handlelabels
+        .selectAll("handles")
+        .data(tweet_data)
+        .enter()
+        .append("text")
+        .attr("class", "handles")
+    handles
+        .text(function(d){return "@" + d.actor.preferredUsername})
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + 10})
+        .attr("x", textwidth - 2)
+        .attr("dy", 10)
+        .style("text-anchor", "end")
+        .on("mouseover", displayuserinfo())
+        .on("mouseout", clearuserinfo())
+}
+function displayuserinfo(){
+    return function(d, i){
+        var userinfo = userinfoblock
+            .append("text")
+            .attr("class", "userinfo")
+            .data([d])
+        userinfo
+            .text(function(d){return d.actor.summary})
+            .attr("x", 800)
+            .attr("y", 50) }
+}
+function clearuserinfo(){
+    return function(d, i){
+        viz.selectAll(".userinfo").remove() }
+}
+
+// find the max number of followers, so we can set the scale
+function findmax(){
+    var max = 0;
+    for (var i = 0; i < tweet_data.length; i++){
+        if (tweet_data[i].actor.followersCount >= max) { max = tweet_data[i].actor.followersCount}
+    }
+    return max }
+
+// getter for the follower/friend counts
+function returnfollowers(d){ return d.actor.followersCount }
+function returnfriends(d){ return d.actor.friendsCount }
+
+</script>
+</body>
+</html>
