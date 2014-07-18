@@ -30,7 +30,7 @@ my_array[2]="WEE"
 
 console.log(my_array);
 
-my_arry.pop() <removes the last element>
+my_array.pop() <removes the last element>
 
 console.log(my_array);
 
@@ -74,7 +74,7 @@ delete obj.gender
 
 `obj_keys=keys(obj)`  
 `for (var i = 0; i < obj_keys.length; i++) {`  
-    `alert(obj.obj_keys[i]);`  
+    `alert(obj_keys[i]);`  
 `}`  
 ### Scope 
 The use of `var` sets the scope of the variable to the current context. Without `var`, the variable is global. 
@@ -204,7 +204,8 @@ define a function like this:
 <pre>  
 function displayhandles(){
     body = d3.select('body')
-    body.select('p').data(tweet_data).enter().append('p').attr('class', 'handle')
+    body.append.('div').attr('class','paragraphs_container')
+    d3.selectAll('.paragraphs_container').selectAll('p').data(tweet_data).enter().append('p').attr('class', 'handle')
     handles = d3.selectAll('.handle').text(function(d){
         return d.actor.preferredUsername}) 
 }
