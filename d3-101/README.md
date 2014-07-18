@@ -47,11 +47,10 @@ console.log(my_array);
 </pre>
 
 ####iterate
-`my_array.forEach(function(d,i){ console.log(d)})`
-
-`for (var i = 0; i < my_array.length; i++) {`
-    `alert(my_array[i]);`
-`}`
+`my_array.forEach(function(d,i){ console.log(d)})`  
+`for (var i = 0; i < my_array.length; i++) {`  
+    `alert(my_array[i]);`  
+`}`  
 
 ### Object
 The javascript `object` is like a python `dict`.
@@ -75,10 +74,10 @@ delete obj.gender
 </pre>
 ####iterate
 
-`obj_keys=keys(obj)`
-`for (var i = 0; i < obj_keys.length; i++) {`
-    `alert(obj.obj_keys[i]);`
-`}`
+`obj_keys=keys(obj)`  
+`for (var i = 0; i < obj_keys.length; i++) {`  
+    `alert(obj.obj_keys[i]);`  
+`}`  
 ### Scope 
 The use of `var` sets the scope of the variable to the current context. Without `var`, the variable is global. 
 <pre>
