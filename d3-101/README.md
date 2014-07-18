@@ -7,7 +7,7 @@
 Let's start by opening a blank template. Follow these instructions in [Chrome](https://www.google.com/intl/en/chrome/browser/#brand=CHMB&utm_campaign=en&utm_source=en-ha-na-us-sk&utm_medium=ha) browser. 
 
 *  From the `d3-101` folder, run `python -m SimpleHTTPServer 8080` 
-*  Navigate to [localhost:8080/hello-d3.html](localhost:8080/hello-d3.html) in Chrome.
+*  Navigate to `localhost:8080/hello-d3.html` in Chrome.
 *  Press `option+command+j`. 
 
 
