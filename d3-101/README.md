@@ -1,9 +1,9 @@
-D3 101
+#D3 101
 ---------
 ---------
 [cheat sheet](https://github.com/alignedleft/strata-d3-tutorial/blob/master/d3%20Cheat%20Sheet.pdf)
 
-# Javascript intro
+## Javascript intro
 Let's start by opening a blank template. Follow these instructions in [Chrome](https://www.google.com/intl/en/chrome/browser/#brand=CHMB&utm_campaign=en&utm_source=en-ha-na-us-sk&utm_medium=ha) browser. 
 
 *  click [here](http://data-science-6.gnip.com/~blehman/hello-d3.html) and open the link in Chrome. 
@@ -121,7 +121,7 @@ function test6() {
 };
 </pre>
 
-#D3
+##D3
 ### Selections
 What happens when you type the following?  
 
