@@ -12,12 +12,10 @@ Let's start by opening a blank template. Follow these instructions in [Chrome](h
 
 
 Inside the developer window we can select `Elements` tab to view the structure of the [dom](http://en.wikipedia.org/wiki/Document_Object_Model). The `body` element contains some script (`<script> </script>`) and a paragraph (`<p> </p>`). The script that allows us to access the d3 library is highlighted below.  
-
 ![](https://github.com/blehman/Data-Science-45min-Intros/blob/master/d3-101/imgs/elements.png?raw=true)
 
-Notice that below the `Network` tab, we can select a `Console` subtab. There's also a parent  `Console` tab. Either works for typing commands. We can now type javascript and d3 commands directly in the console.
-
-![](https://github.com/blehman/Data-Science-45min-Intros/blob/master/d3-101/imgs/console.png?raw=true)
+Notice that below the `Network` tab, we can select a `Console` subtab. There's also a parent  `Console` tab. Either works for typing commands. We can now type javascript and d3 commands directly in the console.  
+![](https://github.com/blehman/Data-Science-45min-Intros/blob/master/d3-101/imgs/subtab.png?raw=true)
 
 ### Array
 The javascript `array` is like a python `list`.
