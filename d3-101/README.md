@@ -75,12 +75,11 @@ delete obj['income']
 delete obj.gender
 </pre>
 ####iterate
-<pre>
-obj_keys=keys(obj)
-for (var i = 0; i < obj_keys.length; i++) {
-    alert(obj.obj_keys[i]);
-}
-</pre>
+
+`obj_keys=keys(obj)`
+`for (var i = 0; i < obj_keys.length; i++) {`
+    `alert(obj.obj_keys[i]);`
+`}`
 ### Scope 
 The use of `var` sets the scope of the variable to the current context. Without `var`, the variable is global. 
 <pre>
