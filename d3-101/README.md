@@ -6,8 +6,8 @@
 ## Javascript intro
 Let's start by opening a blank template. Follow these instructions in [Chrome](https://www.google.com/intl/en/chrome/browser/#brand=CHMB&utm_campaign=en&utm_source=en-ha-na-us-sk&utm_medium=ha) browser. 
 
-*  click [here](http://data-science-6.gnip.com/~blehman/Data-Science-45min-Intros/d3-101/hello-d3.html) and open the link in Chrome. 
-
+*  From the `d3-101` folder, run `python -m SimpleHTTPServer 8080` 
+*  Navigate to [localhost:8080/hello-d3.html](localhost:8080/hello-d3.html) in Chrome.
 *  Press `option+command+j`. 
 
 
