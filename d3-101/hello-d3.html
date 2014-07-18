@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            color: red;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script src="http://d3js.org/d3.v2.js"></script>
+    <script>
+        var a = 5; //global scope is forced without the use of var
+
+        function return_global_a() {
+            return a;
+        }
+        function return_global_b() {
+            return b;
+        }
+
+        function test1() {
+            console.log("a in function scope:",a);
+            console.log("a in global scope:",return_global_a());
+        };
+
+        function test2() {
+            var a=2;
+            console.log("a in function scope:",a);
+            console.log("a in global scope:",return_global_a());
+        };
+
+        function test3() {
+            a=3
+            console.log("a in function scope:",a);
+            console.log("a in global scope:",return_global_a());
+        };
+
+        function test4() {
+            var a=7
+            console.log("a in function scope:",a);
+            console.log("a in global scope:",return_global_a());
+        };
+        function test5() {
+            b=2
+            console.log("b in function scope:",b);
+            console.log("b in global scope:",return_global_b());
+        };
+        function test6() {
+            console.log("b in function scope:",b);
+            console.log("b in global scope:",return_global_b());
+        };
+
+        d3.select("body").append("p").text("D3-101")
+        
+    </script>
+</body>
