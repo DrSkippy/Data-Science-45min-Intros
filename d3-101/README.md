@@ -218,22 +218,28 @@ Awesome! What did we do?
 `body = d3.select('body')` selects an html element to append children to.  
 
 Here's where the magic happens:
-`body.select('p')` selects all of the elements that we are going to want to append data to (in this case, there aren't any yet)
-`.data(tweet_data)` selects all of the data we are going to associate with elements
-`.enter()` creates a new element for each datum for which there is not already an element. magic, right there.
-`.append('p')` makes a new element for each entered thing
-`.attr('class', 'handle')` classes the objects that we just made
+`body.select('p')` selects all of the elements that we are going to want to append data to (in this case, there aren't any yet)    
+`.data(tweet_data)` selects all of the data we are going to associate with elements    
+`.enter()` creates a new element for each datum for which there is not already an element. magic, right there.    
+`.append('p')` makes a new element for each entered thing    
+`.attr('class', 'handle')` classes the objects that we just made    
 Then:
-`d3.selectAll('.handle')` makes a selection of all of the handle objects
-`.text(...)` gives them a text attribute based on thier data. Great!
+`d3.selectAll('.handle')` makes a selection of all of the handle objects    
+`.text(...)` gives them a text attribute based on thier data. Great!    
 
-Now, inside of displayhandles() we definied a global variable 'handles' which contains that selection. Look at 'handles' in your console, and notice a few things: it's an array of p.handle objects, each p.handle thing has a _data_ attribute wrapped up in it that contains the tweet (datum) associated with the object.
+Now, inside of displayhandles() we definied a global variable `handles` which contains that selection. Look at 'handles' in your console, and notice a few things: it's an array of `p.handle` objects, each `p.handle` thing has a `_data_` attribute wrapped up in it that contains the tweet (datum) associated with the object. It's important to note that this `_data_` attribute is persistant, it remains associated with whatever thing you created and bound to your data.
 
+## Scales & Axes   
 
+D3 also aims to help you easily transform data into representations of data. One important way to do that is to define _scales_ in D3, which are simply easy ways to define functions that take a domain to a range with some kind of transform (linear, logarithmic, etc).
+A quick example:  
 
+If I wanted to map the number of followers some user had to the number of pixels a bar representing thier followers extended, I might define a scale with a domain from 0 to the maximum number of followers in my data set and a range of 0 units to the longest bar I want to display.
+`barscale = d3.scale.linear().domain([0, 100000]).range([0,1000])`
 
-
-## Scales & Axes
 
 ## Shapes
 
+
+## Example
+Many of these concepts are tied up in an example in tweet_bars.html, which is included in the repo. You can give it a look to see data binding, scales, shapes, and D3.js in action.
