@@ -119,6 +119,43 @@ foo\#bar     // `<foo id="bar">`
 Chaining can simplify code. 
 
 ## Data
+The 3 D’s in D3 stand for:    
+    Data    
+    Driven    
+    Documents    
+and the most important methods in D3 are those that help you map data to svg elements in your visualization.
+Data in D3 is pretty much always an iterable--a list of datums that you can iterate over to generate elements, like bars in a bar chart.
+
+Since we’re interested in visualizing social data, let’s look at a social data example:    
+
+`d3.json("tweet_example/test_twitter_data_for_D3.json", function(data){tweet_data = data})`
+For the record, everything in that anonymous function that we defined inside of the d3.json() call will execute when we load our data, although it is not necessary to put the functions we want to execute there. 
+
+Cool. We just loaded the data file, which is simply a JSON-formatted list of JSON formatted tweet-payloads. Look at that list now.
+
+`tweet_data`
+
+JS reads in the JSON formatted list as a list, and each JSON formatted payload as an object. Click the arrow next to an object to inspect it further. That structure should look pretty familiar.
+
+We’ve already appended paragraphs to an svg element, let’s append data-driven paragraphs to our document.  
+
+define a function like this:    
+function displayhandles(){
+    body = d3.select('body')
+    body.select('p').data(tweet_data).enter().append('p').attr('class', 'handle')
+    d3.selectAll('.handle').text(function(d){
+        return d.actor.preferredUsername}) 
+}
+
+Now call that function:   
+`displayhandles()`
+
+Awesome!
+
+
+
+
+
 
 ## Scales & Axes
 
