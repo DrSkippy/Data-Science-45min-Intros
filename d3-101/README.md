@@ -47,13 +47,12 @@ console.log(my_array);
 </pre>
 
 ####iterate
-<pre>
-my_array.forEach(function(d,i){ console.log(d)})
+`my_array.forEach(function(d,i){ console.log(d)})`
 
-for (var i = 0; i < my_array.length; i++) {
-    alert(my_array[i]);
-}
-</pre>
+`for (var i = 0; i < my_array.length; i++) {`
+    `alert(my_array[i]);`
+`}`
+
 ### Object
 The javascript `object` is like a python `dict`.
 
