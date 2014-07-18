@@ -200,19 +200,34 @@ JS reads in the JSON formatted list as a list, and each JSON formatted payload a
 
 We’ve already appended paragraphs to an svg element, let’s append data-driven paragraphs to our document.  
 
-define a function like this:    
+define a function like this:  
+<pre>  
 function displayhandles(){
     body = d3.select('body')
     body.select('p').data(tweet_data).enter().append('p').attr('class', 'handle')
-    d3.selectAll('.handle').text(function(d){
+    handles = d3.selectAll('.handle').text(function(d){
         return d.actor.preferredUsername}) 
 }
+</pre>
 
 Now call that function:   
 `displayhandles()`
 
-Awesome!
+Awesome! What did we do?
 
+`body = d3.select('body')` selects an html element to append children to.  
+
+Here's where the magic happens:
+`body.select('p')` selects all of the elements that we are going to want to append data to (in this case, there aren't any yet)
+`.data(tweet_data)` selects all of the data we are going to associate with elements
+`.enter()` creates a new element for each datum for which there is not already an element. magic, right there.
+`.append('p')` makes a new element for each entered thing
+`.attr('class', 'handle')` classes the objects that we just made
+Then:
+`d3.selectAll('.handle')` makes a selection of all of the handle objects
+`.text(...)` gives them a text attribute based on thier data. Great!
+
+Now, inside of displayhandles() we definied a global variable 'handles' which contains that selection. Look at 'handles' in your console, and notice a few things: it's an array of p.handle objects, each p.handle thing has a _data_ attribute wrapped up in it that contains the tweet (datum) associated with the object.
 
 
 
