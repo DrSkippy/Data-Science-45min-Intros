@@ -30,7 +30,7 @@ my_array[2]="WEE"
 
 console.log(my_array);
 
-my_arry.pop() <removes the last element>
+my_array.pop() <removes the last element>
 
 console.log(my_array);
 
@@ -74,7 +74,7 @@ delete obj.gender
 
 `obj_keys=keys(obj)`  
 `for (var i = 0; i < obj_keys.length; i++) {`  
-    `alert(obj.obj_keys[i]);`  
+    `alert(obj_keys[i]);`  
 `}`  
 ### Scope 
 The use of `var` sets the scope of the variable to the current context. Without `var`, the variable is global. 
@@ -204,9 +204,16 @@ define a function like this:
 <pre>  
 function displayhandles(){
     body = d3.select('body')
-    body.select('p').data(tweet_data).enter().append('p').attr('class', 'handle')
-    handles = d3.selectAll('.handle').text(function(d){
-        return d.actor.preferredUsername}) 
+    body.append('div').attr('class','paragraphs_container')
+    d3.selectAll('.paragraphs_container')
+        .selectAll('p')
+        .data(tweet_data)
+        .enter()
+        .append('p')
+        .attr('class', 'handle')
+    handles = d3.selectAll('.handle')
+        .text(function(d){
+            return d.actor.preferredUsername}) 
 }
 </pre>
 
@@ -218,8 +225,9 @@ Awesome! What did we do?
 `body = d3.select('body')` selects an html element to append children to.  
 
 Here's where the magic happens:
-`body.select('p')` selects all of the elements that we are going to want to append data to (in this case, there aren't any yet)    
-`.data(tweet_data)` selects all of the data we are going to associate with elements    
+`body.append('div').attr('class', 'paragraph_container')` creates and classes a new `div` where we will put our new paragraphs. creating a new div for a new set of objects makes selecting all of the paragraphs we want to deal with easier, without accidentally selecting unrelated pieces of our DOM
+`d3.selectAll(.paragraph_container')` selects all of the elements that we are going to want to append data to (in this case, there aren't any 'p' elements in this div just yet, but we are setting up a selecting that will contain all 'p' elements in the div)
+`.data(tweet_data)` selects all of the data we are going to associate with elements   
 `.enter()` creates a new element for each datum for which there is not already an element. magic, right there.    
 `.append('p')` makes a new element for each entered thing    
 `.attr('class', 'handle')` classes the objects that we just made    
@@ -227,19 +235,9 @@ Then:
 `d3.selectAll('.handle')` makes a selection of all of the handle objects    
 `.text(...)` gives them a text attribute based on thier data. Great!    
 
-Now, inside of displayhandles() we definied a global variable `handles` which contains that selection. Look at 'handles' in your console, and notice a few things: it's an array of `p.handle` objects, each `p.handle` thing has a `_data_` attribute wrapped up in it that contains the tweet (datum) associated with the object. It's important to note that this `_data_` attribute is persistant, it remains associated with whatever thing you created and bound to your data.
-
-## Scales & Axes   
-
-D3 also aims to help you easily transform data into representations of data. One important way to do that is to define _scales_ in D3, which are simply easy ways to define functions that take a domain to a range with some kind of transform (linear, logarithmic, etc).
-A quick example:  
-
-If I wanted to map the number of followers some user had to the number of pixels a bar representing thier followers extended, I might define a scale with a domain from 0 to the maximum number of followers in my data set and a range of 0 units to the longest bar I want to display.
-`barscale = d3.scale.linear().domain([0, 100000]).range([0,1000])`
-
-
-## Shapes
+Now, inside of displayhandles() we definied a global variable `handles` which contains that selection. Look at 'handles' in your console, and notice a few things: it's an array of `p.handle` objects, each `p.handle` thing has a `_data_` attribute wrapped up in it that contains the tweet (datum) associated with the object. It's important to note that this `_data_` attribute is persistant, it remains associated with whatever thing you created and bound to your data. Each object in this selection also contains all kinds of other attributes associated with paragraph objects--you can find the attributes that you set, such as "textContent" and "className", as well as a lot of other information that you have not set explicitly, but could.
 
 
 ## Example
-Many of these concepts are tied up in an example in tweet_bars.html, which is included in the repo. You can give it a look to see data binding, scales, shapes, and D3.js in action.
+Many of these concepts are tied up in an example in tweet_bars.html, which is included in the repo. You can give it a look to see data binding in action, as well as scales, shapes (which we haven't discussed yet).
+To look at tweet_bars.html, replace `hello-d3.html` in your browser with `tweet_example/tweet_bars.html`. View the source and comments to get an idea of what the code is doing, and inspect variables like `handles` to look at a d3 selection of svg text objects--you'll notice many of the same properties that `handles` had in the previous example.
