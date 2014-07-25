@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tweet-driven documents</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script src="http://d3js.org/d3.v2.min.js"></script>
+<style type="text/css">
+    body {
+        background-color: #F5F8FA;
+    }
+    .handles {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 16px;
+        fill: #8899A6;
+        fill-opacity: 1 
+    }
+    .followers { 
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 16px;
+        fill: #292F33;
+    }
+    .friends {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 16px;
+        fill: #66757F;
+    }
+    .userinfo {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 12px;
+        fill: #292F33;
+        fill-opacity: 1 
+    }
+
+</style>
+</head>
+<body>
+<div id="body"> </div>
+<script type="text/javascript">
+
+// Globals
+var width = 2000,
+    height = 1400,
+    barheight = 500,
+    xaxis = 600,
+    textwidth = 200,
+    barscale,
+    tweet_data;
+// global variable for the svg object that we will do all of our drawing on
+var viz = d3.select("body").append("svg").attr("width", width).attr("height", height);
+
+// load JSON data
+d3.json("test_twitter_data_for_d3.json", 
+    // funtion that executes on the file we just loaded
+    // (this is where all the things you want to execute go)
+    function(data) { 
+        // sort the list of tweets by follower count before I display them
+        // also, assign the data to the global variable 'tweet_data,'  
+        // so I can look at the object from the console and use it in other functions
+        tweet_data = data.sort(function(a,b){ return b.actor.followersCount - a.actor.followersCount })
+        // scale for the bargraph (D3 has a rangle of scale functions, here I am choosing one and specifying
+        // domain and range. 'barscale' is now a function. Once again, because 'barscale' is a global
+        // I can see it from *any* function I define in the 
+        // same space. This means I'll use 'barscale' in later functions without passing it in as an arguement,
+        // the same way I use 'tweet_data'
+        barscale = d3.scale.linear().domain([0, findmax()]).range([0, barheight])
+        // Display the handle labels
+        writehandles()
+        // draw the barchart
+        friendsbars = drawbars(5, "friends", returnfriends)
+        followersbars = drawbars(-5, "followers", returnfollowers)
+        // draw the chart legend
+        drawkey(["friends", "followers"])
+} ) 
+
+// make the labels for the bargraph
+function writehandles(){
+    // svg group for the labels
+    // I am purposely making these global scope (even though that seems kinda weird) so that we 
+    // can look at them from the console
+    handlelabels = viz.append("g").attr("class", "labels").attr("transform", "translate(100,100)");
+    handles = handlelabels
+        // select the objects to act on (which have yet to be created)
+        .selectAll("handles")
+        // append the data
+        .data(tweet_data)
+        // for every datum for which there is no associated element
+        .enter()
+        // append a text element. this text element now has a property _data_ 
+        // which holds the datum associated with it. This means that if we refernce
+        // "handles" later, the data will still be associated 
+        .append("text")
+        // class the objects
+        .attr("class", "handles")
+    handles
+        // specify the text attribute
+        .text(function(d){return "@" + d.actor.preferredUsername})
+        // specify x and y positions
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length))})
+        .attr("x", textwidth - 5)
+        .attr("dy", 10)
+        .style("text-anchor", "end")
+    // Return the thing that I just drew, so that I can reference it later
+    return handles
+}
+
+// draw the bars 
+// offset just says how far off the 'center' (the tick for each user) the bar should be,
+// so I can cluster bars. metricgetter is a function that returns the metric I might want to 
+// use to define the bar width. classname is the name of the class of bars that I draw
+function drawbars(offset, classname, metricgetter){
+    // grouping pieces into svg groups allows you to reference them together and move them together
+    // svg group for the bars
+    var bars = viz.append("g").attr("class", "bars").attr("transform", "translate(100,100)");
+    var barstodraw = bars
+        // select the things to act on (which are not yet defined)
+        .selectAll(classname)
+        // associate the new svg thing with some data. anything I do will iterate over this data
+        .data(tweet_data)
+        // for every time we see data, but do NOT yet see an element
+        .enter()
+        // make that element for the data (an svg rectangle object)
+        .append("rect")
+        // class that rectangle
+        .attr("class", classname)
+    barstodraw
+        // set the x & y -locations of the bottom-left corner of the rectangle
+        .attr("x", textwidth)
+        .attr("y", function(d, i){ return (i*(height / tweet_data.length)) + offset})
+        // (the width of the bar, height is the y)
+        .attr("height",  Math.abs(offset) * 2)
+        // the length of the bar
+        .attr("width", function(d){ return barscale(metricgetter(d)) })
+    // Return the thing I just drew, so I can reference it later if I want to
+    return barstodraw
+}
+
+// draw key
+// barclassnames = ['bar1class', 'bar2class']
+function drawkey(barclassnames){
+    // svg group for the keys
+    var key = viz.append("g")
+        .attr("class", "key")
+        .attr("transform", "translate(" + (barheight+100+textwidth+100) + ",100)")
+    // draw the colored rectangles
+    var keybox = key
+       .selectAll()
+       .data(barclassnames)
+       .enter()
+       .append("rect")
+       .attr("class", function(d){return d})
+       .attr("x", function(d, i){return 50})
+       .attr("y", function(d, i){return i*40})
+       .attr("height", 20)
+       .attr("width", 50) 
+    // draw the text
+    var keytext = key
+       .selectAll()
+       .data(barclassnames)
+       .enter()
+       .append("text")
+       .attr("class", function(d){return d})
+       .attr("x", function(d, i){return 110})
+       .attr("y", function(d, i){return i*40})
+       .attr("dy", 15)
+       .text(function(d){return d})
+}
+// find the max number of followers, so we can set the scale
+function findmax(){
+    var max = 0;
+    for (var i = 0; i < tweet_data.length; i++){
+        if (tweet_data[i].actor.followersCount >= max) { max = tweet_data[i].actor.followersCount}
+    }
+    return max }
+
+// getter for the follower/friend counts
+function returnfollowers(d){ return d.actor.followersCount }
+function returnfriends(d){ return d.actor.friendsCount }
+
+</script>
+</body>
+</html>

@@ -42,11 +42,15 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Logistic Regression](logistic-regression)
 
+- [Naive Bayes Classifier](naive-bayes-classifier-101)
+
 
 ### Geographic Information Systems
 
 - [Introduction to shapefile utilties + reverse geo coding (and Makefile)](gis_tools)
 
+### Visualization
 
+- [D3 and Javascript Intro](d3-101)
 
 
