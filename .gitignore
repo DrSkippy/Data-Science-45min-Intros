@@ -1,6 +1,5 @@
 *.py[cod]
 *.swp
-sklearn-101/lin-reg.pkl
 
 # C extensions
 *.so
