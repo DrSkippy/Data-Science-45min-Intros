@@ -16,7 +16,7 @@ class MRWordFrequencyCount(MRJob):
     def reducer(self, word, counts):
         yield word, sum(counts)
 
-    # another example
+#    # another example from the mrjob docs
 #    def mapper(self, _, line):
 #        # here's one version of an MR counter: summary stats
 #        yield "chars", len(line)
