@@ -6,7 +6,7 @@ The manual can be found [here](http://stedolan.github.io/jq/manual/).
 
 # Building blocks of jq
 
-A call to jq typically takes the form `jq 'FILTER_1 | FILTER_2 '| FILTER_N < input_file.json`.
+A call to jq typically takes the form `jq 'FILTER_1 | FILTER_2 | FILTER_N' < input_file.json`.
 Lines consisting of JSON-formated strings are recieved from stdin. Output in the form of whitespace-separated,
 JSON-formatted strings is sent to stdout. jq provides a variety of command line options to select
 other input and output preferences. These are well-documented in the manual.
