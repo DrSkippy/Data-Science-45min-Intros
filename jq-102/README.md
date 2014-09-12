@@ -212,10 +212,11 @@ And now for the the entire top-5000:
 cat top_n.json | jq '.data[] | select(.key|contains("count")).value, select(.key|contains("item")).value' | awk '{a=$0; getline; print a ", " $0}'
 ```
 
-## Some notes
+# Some notes
 
 A few commands don't work as advertized in the manual, despite having the most recent version of jq.
 
 * `sort`
 * `?`
 * `group`
+* `flatten`
