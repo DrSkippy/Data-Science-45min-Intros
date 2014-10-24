@@ -52,5 +52,6 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 ### Visualization
 
 - [D3 and Javascript Intro](d3-101)
+- [Real Time Data - Websockets Intro](websockets-101)
 
 
