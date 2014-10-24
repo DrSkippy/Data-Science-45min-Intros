@@ -2,7 +2,7 @@
 
 This intro is a combination of a tutorial on [socket.io](http://socket.io/get-started/chat/) and wisdom gleamed from [Erik Cunningham](https://twitter.com/trinary). 
 
-The first goal is to setup a simple HTML webpage that serves out a form and a list of messages. We're going to use the Node.JS web framework express to this end. Make sure Node.JS is installed.
+The first goal is to setup a simple HTML webpage using the Node.JS web framework express. Make sure Node.JS is installed.
 
 We'll start creating dependencies in `package.json`:
 <pre>
@@ -44,9 +44,7 @@ According to the folks at socket.io, the above lines of code translate into the 
 
 Run `node index.js` and you should see the terminal `listening on *:3000`. Point your browser to `http://localhost:3000` to see the html that you are sending. 
 
-So far in `index.js` we're calling res.send and pass it an HTML string, but it's more common to send an html file. 
-
-Let's refactor our route handler in `index.js` to use sendfile instead:  
+So far in `index.js` we're calling res.send and pass it an HTML string, but it's more common to send an html file. So let's refactor our route handler in `index.js` to use sendfile instead:  
 
 <pre>
 app.get('/', function(req, res){
@@ -94,11 +92,19 @@ http.listen(3000, function(){
   console.log('listening on *:3000');
 });
 ```
-According to socket.io demo site, we just "initializ[ed] a new instance of socket.io by passing the http (the HTTP server) object. Then [we] listen on the connection event for incoming sockets, and log it to the console."
+We just "initializ[ed] a new instance of socket.io by passing the http (the HTTP server) object. Then [we] listen on the connection event for incoming sockets, and log it to the console."
 
 We need to load the socket.io-client in `index.html`:
 ```html
-<script src="/socket.io/socket.io.js"></script>
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src = "/app.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <H1> HELLO WORLD  </H1>
+  <p> (from a file)  </p>
+</body>
 <script>
   var socket = io();
 </script>
