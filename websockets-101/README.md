@@ -203,7 +203,7 @@ var req = https.request(requestOptions, function (res) {
 req.end();
 
 server.listen(runningPortNumber);
-<pre>
+</pre>
 
 In the `index.html` document, we pull in the socket.io client, make d3
 available and define the path for app.js. 
