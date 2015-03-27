@@ -23,12 +23,8 @@ An alternative approach: optimize k while we use kNN. What if we let k vary (for
 In summary, optimizing k is a great idea. I don't have a great answer for you, but many people seem to like n-folds cross validation [[reference paper](http://lshtc.iit.demokritos.gr/system/files/XiaogangHan.pdf)].  
 
 ### Distance calculation
-We can use euclidean distance:
+We can use euclidean distance.
 
-$ \text{distance = }
-    \sum \limits_{i=1}^{n} 
-    \left(a_i - b_i \right)^2 $
-    
 Alternatively, we could measure distance using something like using curved space. The scikit-learn package has [various options](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric).
 
 (*add example code*)
