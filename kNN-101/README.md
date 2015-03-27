@@ -16,16 +16,34 @@ This tutorial is uses two main resources:
 ### Optimize k
 A common question: Since k is an input, how do we choose the size of k?
 
-We can optimize k before we use kNN. This technique usually involves something like k-folds and testing various values of k, which let's us compare the mean error rates and choose "the best" k-value.   
+We can optimize k before we use kNN. This technique usually involves something like n-folds and testing various values of k, which let's us compare the mean error rates and choose "the best" k-value.   
 
 An alternative approach: optimize k while we use kNN. What if we let k vary (for each unknown) depending on the distribution of distances? A simple application would be to calculate all distances and k to be the number of neighbors within 1 standard deviation from the mean distance. 
 
-In summary, optimizing k is a great idea; I don't have a great answer for you, but many people seem to like k-folds cross validation [[reference paper](http://lshtc.iit.demokritos.gr/system/files/XiaogangHan.pdf)]. I like the idea of letting k vary based on the relationship between the unknown datum and the labeled neighbors. 
+In summary, optimizing k is a great idea. I don't have a great answer for you, but many people seem to like n-folds cross validation [[reference paper](http://lshtc.iit.demokritos.gr/system/files/XiaogangHan.pdf)].  
 
 ### Distance calculation
-We can use euclidean distance or something differnt like using curved space. This choice is important as it directly orders the "nearness" of the neighbors. 
+We can use euclidean distance:
 
-The main drawback to using kNN is that it can be rather huge memory suck.  
+$ \text{distance = }
+    \sum \limits_{i=1}^{n} 
+    \left(a_i - b_i \right)^2 $
+    
+Alternatively, we could measure distance using something like using curved space. The scikit-learn package has [various options](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric).
+
+(*add example code*)
+
+The method for compute distance is an important choice since it directly quantifies the values used in the logic to determine "nearness" of the neighbors. 
+
+This computation can also be the source of major memory issues. If we can recognize those points "closer" to the unknown without computing and storing distances for the entire dataset, then we can drastically improve the performace of kNN.  
 
 ### Label Logic
-A typical technique is to organize the k neariest neighbors labels as votes towards a certain label. The candidate with the most votes could win, but the label returned is entirely up to the author of the technique. 
+Several questions can be considered while building the logic of labeling the unknown using kNN:
+- When a tie vote occors, which label should be selected?
+- Should those lables of *closer* nearest neighbors be weighted? 
+- How should votes be counted? 
+- Is the return value a confidence score for each label? 
+
+A typical technique is to organize the k neariest neighbors labels as votes towards a certain label. The candidate with the most votes could win. 
+
+However, the decision making behind the label returned is entirely up to the author of the technique. 
