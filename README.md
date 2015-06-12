@@ -24,6 +24,8 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Introduction to ``pandas``](pandas-101)
 
+- [Introduction to vertica with ``vertica_python``](vertica-101)
+
 
 ### Statistics
 
@@ -43,6 +45,8 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 - [Logistic Regression](logistic-regression)
 
 - [Naive Bayes Classifier](naive-bayes-classifier-101)
+
+- [Introduction to kNN](kNN-101)
 
 
 ### Geographic Information Systems
