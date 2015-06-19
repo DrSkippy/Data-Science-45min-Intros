@@ -9,6 +9,8 @@ def bad_ass_function(n):
         pass
     return "finished {}s of badass-ery".format(n)
 
+## start by calling a function
+
 if __name__ == "__main__":
     n = 3
     ret_val = bad_ass_function(n)

@@ -23,14 +23,27 @@ if __name__ == "__main__":
     #print(pool.map(bad_ass_function,[n,6,8,9]))
 
     ## ...and with apply_async
-    result = pool.map_async(bad_ass_function,[n,6,8,9])
+    #result = pool.map_async(bad_ass_function,[n,6,8,9])
    
-    ### WEIRDNESS: if "result" is not queried with "ready" function, processes do not run
+    ### WEIRDNESS: if "result" is not queried with the "ready" (or other) function, processes do not run
     
-    while not result.ready():
-        print("waiting 2 seconds")
-        time.sleep(2)
-    print(result.get())
+    #while not result.ready():
+    #    print("waiting 2 seconds")
+    #    time.sleep(2)
+    #print(result.get())
+
+    ## the number of workers wis the pool is configurable, 
+    ## and defaults to the number of CPU cores on the machine.
+    ## if there are more processes than workers, remaining jobs
+    ## will be executed on the next free worker
+    #pool = Pool(4)
+    #result = pool.map_async(bad_ass_function,[5 for _ in range(20)])
+
+    #while not result.ready():
+    #    print("waiting 2 seconds")
+    #    time.sleep(2)
+    #print("Results:")
+    #[sys.stdout.write(i + '\n')for i in result.get()]
 
 
 """
