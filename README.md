@@ -48,6 +48,8 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Introduction to kNN](kNN-101)
 
+- [AdaBoost](adaboost)
+
 
 ### Geographic Information Systems
 
