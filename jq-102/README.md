@@ -1,7 +1,6 @@
 # A Brief Introduction to jq
 
-jq has been referred to as "sed for JSON data." Like sed, it provides functionality around
-the filtering of the data, the editing of the data, and the construction and insertion of new data. 
+`jq` has been referred to as "sed for JSON data." Acting on JSON-formatted data, it provides the ability to the edit the data, to filter on the data, and to construct and insert new data. 
 The manual can be found [here](http://stedolan.github.io/jq/manual/).
 
 # Building blocks of jq
@@ -32,7 +31,7 @@ and is interpreted by the shell as a blank line. There are options to change thi
 `.` : the simplest operation, which just prints the input data. The dot must start any filter expression
 that acts on the input data.
 
-`NUM` : ignores the input and output NUM, where NUM can be any data
+`NUM` : ignores the input and outputs NUM, where NUM can be any data
 
 `.KEY` : acts on an object, returning the value associated with key KEY
 
@@ -84,7 +83,8 @@ cat tweet2.json | jq '.gnip.klout_profile.topics'
 ```
 
 The key names are separated by dots because this is a straightforward "drill down" through the tweet structure. 
-To dig further, we need to select an element or elements of the array.
+To dig further, we need to select an element or elements of the array. In this case, there is only one element,
+the 0-th element.
 
 ```
 cat tweet2.json | jq '.gnip.klout_profile.topics[0].displayName'
@@ -95,13 +95,12 @@ However, the "[]" operator is not preceeded by a dot, because "[0]" is not a val
 (and the output of .topics isn't an object anyway).
 
 The `map` function acts on an array, applies a filter to each element, and returns the results as an array.
-However, we need a new filter to use `map`.
 
 ```
-cat tweet2.json | jq '.gnip.klout_profile.topics | map(.link)'
+cat tweet2.json | jq '.gnip.klout_profile.topics | map(.displayName)'
 ```
 
-This same operation can be applied to a list of tweets. 
+This same operation can be applied to a list of tweets, or any list of JSON-formatted lines separated by newlines. 
 
 ```
 cat tweets.json | jq '.gnip.klout_profile.topics | map(.link)'
@@ -172,7 +171,7 @@ We can additionally use the slice notation, but we still need to "[]" operator t
 cat top_n.json | jq '.data[0:10][].key'
 ```
 
-Note that we can combine the array decomposition operator with the "key" selection, because the operator is returning individual items that have keys named "key".
+Note that we can combine the array decomposition operator with the "key" selection, because the operator is returning individual items that have keys named "key" (yep, a bit confusing).
 
 Since the top-n are ordered, we can now extract the "value" items. 
 
@@ -180,7 +179,7 @@ Since the top-n are ordered, we can now extract the "value" items.
 cat top_n.json | jq '.data[0:10][].value'
 ```
 
-Hm...looks like we have a proble: we need to get the counts and the terms on the same line. 
+Hm...looks like we have a problem: we need to get the counts and the terms on the same line. 
 The trick is to select items according to a condition. This will require two new function: `select` and `contains`.
 
 ```
