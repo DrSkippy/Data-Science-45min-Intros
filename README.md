@@ -2,12 +2,13 @@
 
 Every week\*, our data science team [@Gnip](https://twitter.com/gnip) (aka [@TwitterBoulder](https://twitter.com/twitterboulder)) gets together for about 50 minutes to learn something. 
 
-While these started as opportunities to collectively "raise the tide" on common stumbling blocks in data munging and analysis tasks, they have since grown to machine learning, statistics, and general programming topics. Anything that will help us to our jobs better is fair game. 
+While these started as opportunities to collectively "raise the tide" on common stumbling blocks in data munging and analysis tasks, they have since grown to machine learning, statistics, and general programming topics. Anything that will help us do our jobs better is fair game. 
+
 For each session, someone puts together the lesson/walk-through and leads the discussion. Presentation platforms commonly include well-written READMEs, IPython notebooks, knitr documents, interactive code sessions... the more hands-on, the better.
 
 Feel free to use these for your own (or your team's) growth, and do submit pull requests if you have something to add. 
 
-\*ok, while we try to do it every week, sometimes it doesn't happen. in that case, we try to guilt trip the person who slacked.  
+\*ok, while we try to do it every week, sometimes it doesn't happen. In that case, we try to guilt trip the person who slacked.  
 
 
 ## Current topics
@@ -45,7 +46,7 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Maximum Likelihood Estimation](max-likelihood-doodle)
 
-- [Count-Min algorithm](count-min)
+- [Count-Min algorithm](count-min-101)
 
 - [A/B Testing](ab_testing)
 
@@ -66,7 +67,7 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Intro to topic modeling](topic-modeling-101)
 
-- [Introduction to K-means clustering](k-means)
+- [Introduction to K-means clustering](k-means-101)
 
 - [Choosing ``k`` in k-means clustering](choosing-k-in-kmeans)
 
@@ -91,7 +92,7 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 ### Geographic Information Systems
 
-- [Shapefile utilties + reverse geo coding (and Makefile)](gis_tools)
+- [Shapefile utilties + reverse geo coding (and Makefile)](gis-tools-101)
 
 
 ### Visualization
