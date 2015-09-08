@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1499.9329"
+   height="751.13995"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="bokeh_with_tentacles_2.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path4646"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4640"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.56810325"
+     inkscape:cx="717.29919"
+     inkscape:cy="328.92352"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2189"
+     inkscape:window-height="1335"
+     inkscape:window-x="101"
+     inkscape:window-y="51"
+     inkscape:window-maximized="0"
+     fit-margin-top="20"
+     fit-margin-left="20"
+     fit-margin-right="20"
+     fit-margin-bottom="20" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-12.625,-107.16445)">
+    <image
+       y="314.50989"
+       x="1107.5883"
+       id="image4243"
+       xlink:href="data:image/png;base64,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 "
+       preserveAspectRatio="none"
+       height="231.4856"
+       width="384.96957" />
+    <rect
+       style="fill:none;stroke:#2b2b2d;stroke-width:1.0765965;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2985"
+       width="603.23352"
+       height="240.67363"
+       x="672.30444"
+       y="-368.37637"
+       rx="9.9980021"
+       ry="12.683913"
+       transform="scale(1,-1)" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="699.27008"
+       y="285.47699"
+       id="text2987"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989"
+         x="699.27008"
+         y="285.47699"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">bokeh</tspan><tspan
+         sodipodi:role="line"
+         x="699.27008"
+         y="325.47699"
+         id="tspan2991"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">python</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="694.74084"
+       y="488.80878"
+       id="text3761"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3763"
+         x="694.74084"
+         y="488.80878"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">{ json }</tspan></text>
+    <rect
+       style="fill:none;stroke:#2b2b2d;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect2985-5"
+       width="248.619"
+       height="148.619"
+       x="625.68524"
+       y="580.20459"
+       rx="9.5320454"
+       ry="9.296957" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="663.61115"
+       y="645.30511"
+       id="text2987-1"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989-2"
+         x="663.61115"
+         y="645.30511"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">bokehjs</tspan><tspan
+         sodipodi:role="line"
+         x="663.61115"
+         y="685.30511"
+         id="tspan2991-4"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">javascript</tspan></text>
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 749.99477,384.61978 0,51.55746"
+       id="path4980"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 749.99477,511.36522 0,51.55746"
+       id="path4980-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 698.88413,745.71686 673.1054,790.36694"
+       id="path4980-9-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 797.1054,745.71686 25.77873,44.65008"
+       id="path4980-9-9-5"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="85.929108"
+       inkscape:transform-center-y="52.631579" />
+    <g
+       id="g5151"
+       transform="translate(234.31277,73.87412)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0"
+         y="764.4303"
+         x="334.91058"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="764.4303"
+           x="334.91058"
+           id="tspan3763-7"
+           sodipodi:role="line">&lt;            &gt;</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0-0"
+         y="759.83362"
+         x="360.81879"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="759.83362"
+           x="360.81879"
+           id="tspan3763-7-8"
+           sodipodi:role="line">canvas</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="571.31274"
+       y="874.98071"
+       id="text5114"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5116"
+         x="571.31274"
+         y="874.98071" /></text>
+    <g
+       id="g5145"
+       transform="translate(242.31277,76.6185)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0-5"
+         y="761.07068"
+         x="534.09766"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="761.07068"
+           x="534.09766"
+           id="tspan3763-7-1"
+           sodipodi:role="line">&lt;        &gt;</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0-0-5"
+         y="758.474"
+         x="559.29297"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="758.474"
+           x="559.29297"
+           id="tspan3763-7-8-0"
+           sodipodi:role="line">html</tspan></text>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3546"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3548"><rect
+           id="rect3550"
+           width="331.61386"
+           height="69.638908"
+           x="379.14517"
+           y="178.70302" /></flowRegion><flowPara
+         id="flowPara3552" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:News Cycle;-inkscape-font-specification:Sans Bold"
+       x="866.32172"
+       y="182.35609"
+       id="text3586"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3588"
+         x="866.32172"
+         y="182.35609"
+         style="font-weight:normal">high level (charts)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:News Cycle;-inkscape-font-specification:Sans Bold"
+       x="866.32172"
+       y="301.36218"
+       id="text3590"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3592"
+         x="866.32172"
+         y="301.36218"
+         style="font-weight:normal">low level (models)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:News Cycle;-inkscape-font-specification:Sans Bold"
+       x="375.5144"
+       y="748.60803"
+       id="text3615"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3617"
+         x="375.5144"
+         y="748.60803"
+         style="font-weight:normal;fill:#000000">nodejs</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="439.08984"
+       y="393.1532"
+       id="text2987-2"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989-9"
+         x="439.08984"
+         y="393.1532"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">rbokeh</tspan><tspan
+         sodipodi:role="line"
+         x="439.08984"
+         y="433.1532"
+         id="tspan2991-3"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">R</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="312.08984"
+       y="608.1532"
+       id="text2987-9"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989-4"
+         x="312.08984"
+         y="608.1532"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">bokeh.jl</tspan><tspan
+         sodipodi:role="line"
+         x="312.08984"
+         y="648.1532"
+         id="tspan2991-7"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">julia</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="112.82422"
+       y="417.86609"
+       id="text2987-9-2"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989-4-5"
+         x="112.82422"
+         y="417.86609"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">bokeh-scala</tspan><tspan
+         sodipodi:role="line"
+         x="112.82422"
+         y="457.86609"
+         id="tspan2991-7-9"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">scala</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="30.789062"
+       y="523.03015"
+       id="text2987-9-2-6"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989-4-5-5"
+         x="30.789062"
+         y="523.03015"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">bokeh-lua</tspan><tspan
+         sodipodi:role="line"
+         x="30.789062"
+         y="563.03015"
+         id="tspan2991-7-9-5"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">lua</tspan></text>
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 515.28906,429.58345 147.42188,51.55746"
+       id="path4980-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 436.51192,562.81279 577.48808,515.91157"
+       id="path4980-8-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 284.74837,439.33829 175.50326,34.04779"
+       id="path4980-8-9-6"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 187.10255,538.5319 157.7949,-29.33943"
+       id="path4980-8-9-6-3"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1141.7354"
+       y="444.14658"
+       id="text2987-2-7"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         id="tspan2989-9-4"
+         x="1141.7354"
+         y="444.14658"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">matplotlib    pandas</tspan><tspan
+         sodipodi:role="line"
+         x="1141.7354"
+         y="484.14658"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+         id="tspan4568">seaborn    ggplot</tspan><tspan
+         sodipodi:role="line"
+         x="1141.7354"
+         y="524.14661"
+         id="tspan2991-3-6"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#000000;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       x="866.4975"
+       y="240.4187"
+       id="text4222"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4224"
+         x="866.4975"
+         y="240.4187"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">mid level (plotting)</tspan></text>
+    <image
+       y="667.0813"
+       x="471.45828"
+       id="image4263"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAAAwCAYAAADHPUINAAAABHNCSVQICAgIfAhkiAAAAmRJREFU eJzt3UtPGlEAxfEDZRqVTVd9RI3wBfoyKUVtrFDtl+iuH7E7LKggTUyfMe6ZMpUKbFDEALVMF9bk 2joCOo9775z/epI5i19uZnUnYtu2DcaG9KvTQXWzhEouj7a1j1jQg5i8nXa7qO18gpnLwyqVcffR QyTXMpjLLA8iPHGY2BVYYMTj548RDgP6x8eobhRhFcuo7Xx0wiJGOGGt327//WYp4ODzV9yffzIM ixjhhKkbYhEjHN1zEYsY4eiYR1jECEeXnLG8hBGfcvt1hKNyPmMRIxzV6h21YW0FgkWMcFRIEixi hCNrEmIRIxyZkhyLGOEEnYil/uUb7j19fIYluwJjajLoeU4RThA5nixyYxEjHL/SAIsY4XhZ7/AI VnFbFyxihON2GmMRIxw3CgkWMcK5biHEIkY44+SEJfFqBbFJ7bGIEc6wiOXSCOeyeq1DWKUysThH OOcRy1iFGw6xXLvwwSEWVwoHHEcsqxnEJiaCnqdi+sIhFk/TC46Ipbm7h5mlNBJrWUynU7h12wh6 nk6pD6fbauFH6QOx+JuacIgl8NSB44RlZiGFqEEsPic3HGKRNvngEIsSyQGHWJQrODgnjSasYhnV rW1iUS9/4Zw0mqisF2Dm8mhVTMy+WCQWNfMeTqfegPl+g1j0yhs4F7CY3zG7tEAseuUeHGIJVTeD QyyhbXw4nYM6zPzm/1gWnyMa433bIWk0OMTC/skZDrGwK7oIh1jYiA0i7dpP21wvnP0VZL+Gucwy kqtZPHg2j0g0GvRAJmeDyLs3b/t3ksnTxOtMdzqd6hMLG6HffwDZ3BxvmxEImAAAAABJRU5ErkJg gg== "
+       preserveAspectRatio="none"
+       height="48"
+       width="142" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       x="1140.0518"
+       y="355.44238"
+       id="text4266"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4268"
+         x="1140.0518"
+         y="355.44238"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#999999;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">compat</tspan></text>
+  </g>
+</svg>
