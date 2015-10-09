@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tweet-driven documents</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<script src="http://d3js.org/d3.v2.min.js"></script>
+<style type="text/css">
+    body {
+        background-color: #F5F8FA;
+    }
+    .letters {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 36px;
+        fill: #FFFFFF;
+        fill-opacity: 1 
+    }
+    .title {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 48px;
+        fill: #292F33;
+        fill-opacity: 1 
+    }
+    .axislabel {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 48px;
+        fill: #292F33;
+        fill-opacity: 1 
+    }
+    .numbers {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 36px;
+        fill: #8899A6;
+        fill-opacity: 1 
+    }
+    .positive_bars { 
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 16px;
+        fill: #292F33;
+    }
+    .negative_bars {
+        font-family: "Helvetica Neue", Helvetica;
+        font-size: 16px;
+        fill: #66757F;
+    }
+
+</style>
+</head>
+<body>
+<div id="body"> </div>
+<script type="text/javascript">
+
+// Globals
+var width = 2000,
+    height = 1600,
+    barheight = 500,
+    xaxis = 600,
+    top_margin = 200,
+    barscale,
+    tweet_data;
+// global variable for the svg object that we will do all of our drawing on
+var viz = d3.select("body").append("svg").attr("width", width + 300).attr("height", height);
+
+// load JSON data
+d3.csv("handle_letter_freq.csv", 
+    // funtion that executes on the file we just loaded
+    // (this is where all the things you want to execute go)
+    function(data) { 
+        // also, assign the data to the global variable 'tweet_data,'  
+        // so I can look at the object from the console and use it in other functions
+        tweet_data = data
+        console.log("thing")
+        // scale for the bargraph (D3 has a rangle of scale functions, here I am choosing one and specifying
+        // domain and range. 'barscale' is now a function. Once again, because 'barscale' is a global
+        // I can see it from *any* function I define in the 
+        // same space. This means I'll use 'barscale' in later functions without passing it in as an arguement,
+        // the same way I use 'tweet_data'
+        barscale = d3.scale.linear().domain([0, .04]).range([0, 600])
+        // Display the handle labels
+        letterbars = drawbars(5, "positive_bars")
+        writenumbers()
+        writeletters()
+        viz.append("g").attr("class", "line").attr("transform", "translate(100,100)")
+            .append("rect").attr("width", width + 36*2).attr("height", 3).attr("x", -36).attr("y", top_margin + 600 - 1)
+        viz.append("g").attr("class", "title").attr("transform", "translate(100,100)")
+            .append("text").text("inspired by xkcd.com/1571").attr("x", 0).attr("y", top_margin).style("fill","#8899A6")
+        viz.append("g").attr("class", "title").attr("transform", "translate(100,100)")
+            .append("text").text("letter scores based on relative frequency in Twitter handles").attr("x", 0).attr("y", top_margin - 54*2)
+        viz.append("g").attr("class", "title").attr("transform", "translate(100,100)")
+            .append("text").text("(% frequency in english-speakers' Twitter handles) - (% frequency in english)").attr("x", 0).attr("y", top_margin - 54).style("fill", "#8899A6") 
+        
+        viz.append("g").attr("class", "line").attr("transform", "translate(100,100)")
+            .append("rect").attr("height", 800).attr("width", 3).attr("x", -18).attr("y", top_margin + 200 )
+        viz.append("g").attr("class","axislabel").attr("transform", "translate(74,1200)rotate(270)").append("text").text("english-like") 
+        viz.append("g").attr("class","axislabel").attr("transform", "translate(74,850)rotate(270)").append("text").text("@handle-like") 
+
+        // draw the barchart
+        // draw the chart legend
+        //drawkey(["friends", "followers"])
+} ) 
+
+// make the labels for the bargraph
+function writenumbers(){
+    // svg group for the labels
+    // I am purposely making these global scope (even though that seems kinda weird) so that we 
+    // can look at them from the console
+    numberlabels = viz.append("g").attr("class", "numlabels").attr("transform", "translate(100,100)");
+    numbers = numberlabels
+        // select the objects to act on (which have yet to be created)
+        .selectAll("numbers")
+        // append the data
+        .data(tweet_data)
+        // for every datum for which there is no associated element
+        .enter()
+        // append a text element. this text element now has a property _data_ 
+        // which holds the datum associated with it. This means that if we refernce
+        // "handles" later, the data will still be associated 
+        .append("text")
+        // class the objects
+        .attr("class", "numbers")
+    numbers
+        // specify the text attribute
+        .text(function(d){return d3.round(d.frequency*100,1)})
+        // specify x and y positions
+        .attr("y", function(d) { if ( d.frequency < 0 ) { return top_margin + 600 + barscale(Math.abs(d.frequency)) + 36 } else { return top_margin + 600 - barscale(d.frequency) - 8 } } )
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) +10})
+        .attr("dx", 18 )
+        .style("text-anchor","middle") 
+    // Return the thing that I just drew, so that I can reference it later
+    return numbers
+}
+
+// make the labels for the bargraph
+function writeletters(){
+    // svg group for the labels
+    // I am purposely making these global scope (even though that seems kinda weird) so that we 
+    // can look at them from the console
+    letterlabels = viz.append("g").attr("class", "labels").attr("transform", "translate(100,100)");
+    letters = letterlabels
+        // select the objects to act on (which have yet to be created)
+        .selectAll("letters")
+        // append the data
+        .data(tweet_data)
+        // for every datum for which there is no associated element
+        .enter()
+        // append a text element. this text element now has a property _data_ 
+        // which holds the datum associated with it. This means that if we refernce
+        // "handles" later, the data will still be associated 
+        .append("text")
+        // class the objects
+        .attr("class", "letters")
+    letters
+        // specify the text attribute
+        .text(function(d){return d.letter.toUpperCase()})
+        // specify x and y positions
+        .attr("y", function(d) { 
+                if ( d.frequency < 0 ) { 
+                    if (barscale(Math.abs(d.frequency)) > 48) { 
+                        return top_margin + 600 + 36 } 
+                    else { 
+                        return top_margin + 600  -8 }} 
+                else { 
+                    if (barscale(Math.abs(d.frequency)) > 48) { 
+                        return top_margin + 600 - 8 } 
+                    else { 
+                    return top_margin + 600 + 36 }}
+                    } )
+                    //return top_margin + 600 - 8 } } )
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) +10})
+        .attr("dx",8)
+        .style("text-anchor","start")
+        .style("fill", function (d) {  
+                if ( d.frequency < 0 ) { 
+                    if (barscale(Math.abs(d.frequency)) > 48) { 
+                        return "#F5F8FA" } 
+                    else { 
+                        return "#292F33" }} 
+                else { 
+                    if (barscale(Math.abs(d.frequency)) > 48) { 
+                        return "#F5F8FA" } 
+                    else { 
+                    return "#292F33" }}
+                }) 
+    // Return the thing that I just drew, so that I can reference it later
+    return numbers
+}
+
+// draw the bars 
+// offset just says how far off the 'center' (the tick for each user) the bar should be,
+// so I can cluster bars. classname is the name of the class of bars that I draw
+function drawbars(offset, classname){
+    // grouping pieces into svg groups allows you to reference them together and move them together
+    // svg group for the bars
+    var bars = viz.append("g").attr("class", "bars").attr("transform", "translate(100,100)");
+    var barstodraw = bars
+        // select the things to act on (which are not yet defined)
+        .selectAll(classname)
+        // associate the new svg thing with some data. anything I do will iterate over this data
+        .data(tweet_data)
+        // for every time we see data, but do NOT yet see an element
+        .enter()
+        // make that element for the data (an svg rectangle object)
+        .append("rect")
+        // class that rectangle
+        .attr("class", classname)
+    barstodraw
+        // set the x & y -locations of the bottom-left corner of the rectangle
+        .attr("y", function(d) { if ( d.frequency < 0 ) { return top_margin + 600 } else { return top_margin + 600 - barscale(d.frequency) } } )
+        .attr("x", function(d, i){ return (i*(width / tweet_data.length)) + offset})
+        // (the width of the bar, height is the y)
+        .attr("width",  48)
+        // the length of the bar
+        .attr("height", function(d){ return barscale(Math.abs(d.frequency)) })
+    // Return the thing I just drew, so I can reference it later if I want to
+    return barstodraw
+}
+
+
+</script>
+</body>
+</html>
