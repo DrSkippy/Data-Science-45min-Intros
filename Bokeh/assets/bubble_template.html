@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title if title else "Bokeh Plot" }}</title>
+        <link href="assets/bubble_styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        {{ plot_div|indent(8) }}
+        {{ bokeh_js|indent(8) }}
+        {{ plot_script|indent(8) }}
+    </body>
+</html>
+

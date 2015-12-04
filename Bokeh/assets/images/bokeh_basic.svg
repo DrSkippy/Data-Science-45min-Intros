@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="364.49176"
+   height="658.61847"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="bokeh_basic.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="150.73443"
+     inkscape:cy="229.32373"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2054"
+     inkscape:window-height="1393"
+     inkscape:window-x="826"
+     inkscape:window-y="155"
+     inkscape:window-maximized="0"
+     fit-margin-top="20"
+     fit-margin-bottom="20"
+     fit-margin-right="20"
+     fit-margin-left="20" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-320.16058,-123.06747)">
+    <g
+       id="g5012"
+       transform="translate(166,0)">
+      <rect
+         ry="9.2969589"
+         rx="9.5320454"
+         y="143.75797"
+         x="229.3725"
+         height="148.619"
+         width="248.619"
+         id="rect2985"
+         style="fill:none;stroke:#2b2b2d;stroke-width:1.38099098;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="100%"
+         id="text2987"
+         y="208.85849"
+         x="264.23199"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="208.85849"
+           x="264.23199"
+           id="tspan2989"
+           sodipodi:role="line">bokeh</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           id="tspan2991"
+           y="248.85849"
+           x="264.23199"
+           sodipodi:role="line">python</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="464.4281"
+       y="412.19031"
+       id="text3761"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3763"
+         x="464.4281"
+         y="412.19031"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium">{ json }</tspan></text>
+    <g
+       id="g5006"
+       transform="translate(166,-6.4446831)">
+      <rect
+         ry="9.296957"
+         rx="9.5320454"
+         y="510.03079"
+         x="229.3725"
+         height="148.619"
+         width="248.619"
+         id="rect2985-5"
+         style="fill:none;stroke:#2b2b2d;stroke-width:1.38099098;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+      <text
+         sodipodi:linespacing="100%"
+         id="text2987-1"
+         y="575.13129"
+         x="267.2984"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="575.13129"
+           x="267.2984"
+           id="tspan2989-2"
+           sodipodi:role="line">bokehjs</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:100%;fill:#9d2e37;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           id="tspan2991-4"
+           y="615.13129"
+           x="267.2984"
+           sodipodi:role="line">javascript</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 519.682,308.00128 0,51.55746"
+       id="path4980"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 519.682,434.74672 0,51.55746"
+       id="path4980-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 468.57136,669.09836 -25.77873,44.65008"
+       id="path4980-9-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#9d2e37;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 566.79263,669.09836 25.77873,44.65008"
+       id="path4980-9-9-5"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="85.929108"
+       inkscape:transform-center-y="52.631579" />
+    <g
+       id="g5151"
+       transform="translate(4,-2.7443848)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0"
+         y="764.4303"
+         x="334.91058"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="764.4303"
+           x="334.91058"
+           id="tspan3763-7"
+           sodipodi:role="line">&lt;            &gt;</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0-0"
+         y="759.83362"
+         x="360.81879"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="759.83362"
+           x="360.81879"
+           id="tspan3763-7-8"
+           sodipodi:role="line">canvas</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="341"
+       y="746"
+       id="text5114"
+       sodipodi:linespacing="125%"
+       transform="translate(0,52.362183)"><tspan
+         sodipodi:role="line"
+         id="tspan5116"
+         x="341"
+         y="746"></tspan></text>
+    <g
+       id="g5145"
+       transform="translate(12,0)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0-5"
+         y="761.07068"
+         x="534.09766"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="761.07068"
+           x="534.09766"
+           id="tspan3763-7-1"
+           sodipodi:role="line">&lt;        &gt;</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3761-0-0-5"
+         y="758.474"
+         x="559.29297"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#2b2b2d;stroke:none;font-family:News Cycle;-inkscape-font-specification:News Cycle Medium"
+           y="758.474"
+           x="559.29297"
+           id="tspan3763-7-8-0"
+           sodipodi:role="line">html</tspan></text>
+    </g>
+  </g>
+</svg>
