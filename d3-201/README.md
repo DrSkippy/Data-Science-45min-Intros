@@ -40,10 +40,10 @@ from the other folders. Open up the index.html file and look at the
 structure. Explore and try to determine where these sources point and
 take a guess:  
 
-1. [basic] What is the purspose each sourced file?
+1. [basic] What is the purspose each sourced file?  
 2. [intermediate] What determines the number of graphs we will
-   create?
-3. [advanced] How does the graph access the data?
+   create?  
+3. [advanced] How does the graph access the data?  
 
 Let's experiment with the code and see if we can answer some of the
 abpve questions. We will start by exploring the graph and rendering the
@@ -57,16 +57,18 @@ We should see two heatmaps.
 
 ##### Part II: Explanation of app.js
 Let's dive into the code. Open `js/app.js` in vim.  
-1. Where is myHeatmap envoked?
-2. Why are we iterating over dataPathArray on line 12?
-3. What do you think happens when we use myHeatmap.height()?
+1. Where is heatmap envoked?  
+2. What is the value of myHeatmap?  
+2. Why are we iterating over dataPathArray on line 12?  
+3. What do you think happens when we use myHeatmap.height()?  
 
 ##### Part III: Explanation of heatmap.js
 Let's dive into the code. Open `js/heatmap.js` in vim.  
 1. Why do we love python? (see lines 3-49)  
-2. Where is the function `chart` envoked?  
-3. How can I change the color of both charts?  
-4. How can I change the color of just one chart?  
+2. When is the function `chart` envoked?  
+3. What does myHeatmap() expect and why?  
+4. How can I change the color of both charts?  
+5. How can I change the color of just one chart?  
 
 
 
