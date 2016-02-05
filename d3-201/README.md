@@ -25,13 +25,13 @@ This example builds something close to a javascript charting template that comes
 ### Tutorial
 
 ##### Part I: Render 
-The first step is to set up our directory struction. Run the following
+The first step is to set up our directory structure. Run the following
 command:
 <pre>
 $ cd D3-201
 $ ./_setup_dirs_.py
 </pre>
-We should see new files:  
+We should see the following new files.  
 <br>
 <img src="img/file.png" alt="Drawing" style="width: 600px;"/>  
 </br>
@@ -40,7 +40,7 @@ from the other folders. Open up the index.html file and look at the
 structure. Explore and try to determine where these sources point and
 take a guess:  
 
-1. [basic] What is the purspose each sourced file?  
+1. [basic] What is the purpose of each sourced file?  
 2. [intermediate] What determines the number of graphs we will
    create?  
 3. [advanced] How does the graph access the data?  
@@ -57,18 +57,18 @@ We should see two heatmaps.
 
 ##### Part II: Explanation of app.js
 Open `js/app.js` a text editor.  
-1. Where is `heatmap` invoked?  
-2. What is the value of `myHeatmap`?  
-2. Why are we iterating over dataPathArray on line 12?  
-3. What do you think happens when we use `myHeatmap.height()`?  
+1. [basic] Where is `heatmap` invoked?  
+2. [basic] What do you think happens when we use `myHeatmap.height()`?  
+3. [intermediate] Why are we iterating over dataPathArray on line 12?  
+4. [advanced] What is the value of `myHeatmap`?  
 
 ##### Part III: Explanation of heatmap.js
 Open `js/heatmap.js` in text editor.  
-1. Why do we love python? (see lines 3-49)  
-2. When is the function `chart` invoked?  
-3. What does `myHeatmap()` expect and why?  
-4. How can I change the color of both charts?  
-5. How can I change the color of just one chart?  
+1. [basic] Why do we love python? (see lines 3-49)  
+2. [basic] How can I change the color of both charts?  
+3. [intermediate] How can I change the color of just one chart?  
+4. [advanced] When is the function `chart` invoked?  
+5. [advanced] What does `myHeatmap()` expect and why?  
 
 
 
