@@ -56,17 +56,17 @@ Point your Chrome browser to [localhost:8080](http://localhost:8080/).
 We should see two heatmaps.  
 
 ##### Part II: Explanation of app.js
-Let's dive into the code. Open `js/app.js` in vim.  
-1. Where is heatmap envoked?  
-2. What is the value of myHeatmap?  
+Open `js/app.js` a text editor.  
+1. Where is `heatmap` invoked?  
+2. What is the value of `myHeatmap`?  
 2. Why are we iterating over dataPathArray on line 12?  
-3. What do you think happens when we use myHeatmap.height()?  
+3. What do you think happens when we use `myHeatmap.height()`?  
 
 ##### Part III: Explanation of heatmap.js
-Let's dive into the code. Open `js/heatmap.js` in vim.  
+Open `js/heatmap.js` in text editor.  
 1. Why do we love python? (see lines 3-49)  
-2. When is the function `chart` envoked?  
-3. What does myHeatmap() expect and why?  
+2. When is the function `chart` invoked?  
+3. What does `myHeatmap()` expect and why?  
 4. How can I change the color of both charts?  
 5. How can I change the color of just one chart?  
 
