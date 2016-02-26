@@ -24,7 +24,7 @@ well.
 ###(2) Install a gateway module for communication between our application and the web server
 For this example, we will use fastcgi.  To install this module,
 
-    brew install fastcgi
+    brew install fastcgi 
 
 ###(3) Install the application requirements
     
@@ -36,20 +36,39 @@ The web server will run as a specified user. When the web server was installed, 
 behavior is to run as "nobody". This won't work for us because "nobody" has the wrong permissions.
 (But that doesn't mean everybody has the right permissions!).
 
-Edit the file /opt/twitter/etc/nginx/nginx.conf.  Add the single line immediately after then line 
+Edit the file /opt/twitter/etc/nginx/nginx.conf.  Add a single line immediately after the line 
 that starts "#user..." (line 3):
     
+    ...
     user <your user name> staff;
+    ...
+
+For example, my file:
+
+    ...
+    #user  nobody;
+    user shendrickson staff;
+    worker_processes  1;
+    ...
 
 ###(5) Move into the Scripts directory and deploy the application
 
     cd scripts
     ./deploy.sh
 
+If all goes well, you shouldn't see any errors.
+
 ###(6) Rejoice!
-To understand the workings of the code, follow along as we explore the application tree.  The gist of
-the structure is to keep everthing in an orderly github repository that includes scripts
-for rapidly deploying the code, configs and restarting the web server with the new configs.
+
+![Block diagram of system components](./img/system.jpg "System Components")
+
+To understand the workings of the code, follow along as we explore the application tree.  
+
+The gist of the strategy that drives this structure is to keep everthing in an orderly 
+github repository that includes scripts for rapidly deploying the code and configs
+without major changes to the structure from here to the web server's live directory
+structure. Configs are spread around a bit, but this is handled by our deploy
+script.
 
     |____app
     | |____coin_toss.fcgi
@@ -64,22 +83,33 @@ for rapidly deploying the code, configs and restarting the web server with the n
     | |____deploy.sh
 
 
-###(7) Follow through the files
+###(7) Logs
 
-* Start by opening deploy.sh
-* Open coin_toss.conf
-* Open coin_toss.fcgi
-* open coin_toss.py
+There are two types of logs to pay attention to: Access Logs and App Error Logs. With
+the configuration here, they are in the respective locations illustrated below. For
+now, open a new terminal window and start watching some logs:
 
-###(8) Try the APIs
+* tail -f /opt/twitter/var/log/nginx/coin_toss_server.access.log
+* tail -f /var/log/system.log
 
-* http://localhost:8090/coin_toss/info
+###(8) Follow the worksings through the files
+
+(1) Start by opening deploy.sh. The deploy script gets configs in the right place, moves the app
+    to the live web server directory tree and restarts the server.
+(2) Open coin_toss.conf. This config file tells the nginx server how to load our connector 
+    component into nginx and route requests to our application.
+(3) Open coin_toss.fcgi. This starts our WSGI interface module and connects to the fcgi module.
+(4) Open coin_toss.py. Defines the interface and functionality of the application
+
+###(9) Try the APIs
+
+* http://localhost:8090/coin_toss/info.html
 * http://localhost:8090/coin_toss/ensemble
 * http://localhost:8090/coin_toss/ensemble/summary
-* http://localhost:8090/coin_toss/plot/demo.png
-* http://localhost:8090/coin_toss/hist/100_100_500.png
-* http://localhost:8090/coin_toss/ensemble/table
+* http://localhost:8090/coin_toss/ensemble/table.html
 * http://localhost:8090/coin_toss/ensemble/csv
+* http://localhost:8090/coin_toss/plot/demo.png
+* http://localhost:8090/coin_toss/plot/hist/100_100_500.png
 
 
 

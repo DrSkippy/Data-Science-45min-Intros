@@ -18,13 +18,14 @@ app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)
 # address for OSX
 handler = SysLogHandler(address='/var/run/syslog')
+handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
 
 app.logger.debug(u"Flask server started " + time.asctime())
 
 @app.after_request
 def write_access_log(response):
-    app.logger.debug(u"%s %s -> %s" % (time.asctime(), request.path, response.status_code))
+    app.logger.debug(u"%s %s --> %s" % (time.asctime(), request.path, response.status_code))
     return response
 
 @app.teardown_appcontext
@@ -43,7 +44,7 @@ def get_coin_ensemble(k=10, n=100, p=0.5):
 
 ##############
 
-@app.route('/info')
+@app.route('/info.html')
 def info():
     return render_template( "info.html")
 
@@ -131,7 +132,7 @@ def plot_demo():
     response.mimetype = 'image/png'
     return response
 
-@app.route("/hist/<spec>.png")
+@app.route("/plot/hist/<spec>.png")
 def plot_hist(spec="10_100_500"):
     import numpy as np
     import matplotlib
@@ -141,6 +142,7 @@ def plot_hist(spec="10_100_500"):
     import matplotlib.pyplot as plt
 
     spec = request.args.get("spec", spec, type=str).split("_")
+    assert(len(spec) == 3)
 
     k = int(spec[0])
     n = int(spec[1])
@@ -161,7 +163,7 @@ def plot_hist(spec="10_100_500"):
     response.mimetype = 'image/png'
     return response
 
-@app.route('/ensemble/table')
+@app.route('/ensemble/table.html')
 def table_data(k=5, n=10, p=0.5):
     k = request.args.get("k", k, type=int)
     n = request.args.get("n", n, type=int)
