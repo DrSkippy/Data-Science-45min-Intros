@@ -28,7 +28,7 @@ For this example, we will use fastcgi.  To install this module,
 
 ###(3) Install the application componenents
     
-    numpy, matplotlib
+    pip install numpy matplotlib
     pip install flask flup
 
 ###(4) We need to set a user for the web server.
@@ -36,8 +36,8 @@ The web server will run as a specified user. When the web server was installed, 
 behavior is to run as "nobody". This won't work for us because "nobody" has the wrong permissions.
 (But that doesn't mean everybody has the right permissions!).
 
-    Edit the file /opt/twitter/etc/nginx/nginx.conf
-    Add the single line immediately after then line that starts "#user..." (line 3):
+Edit the file /opt/twitter/etc/nginx/nginx.conf.  Add the single line immediately after then line 
+that starts "#user..." (line 3):
     
     user <your user name> staff;
 
@@ -49,17 +49,18 @@ behavior is to run as "nobody". This won't work for us because "nobody" has the 
 ###(6) Rejoice!
 To understand the workings of the code, follow along:
 
-|____app
-| |____coin_toss.fcgi
-| |____coin_toss.py
-| |____templates
-| | |____info.html
-| | |____table.html
-|____configs
-| |____coin_toss.conf
-|____README.md
-|____scripts
-| |____deploy.sh
+
+    |____app
+    | |____coin_toss.fcgi
+    | |____coin_toss.py
+    | |____templates
+    | | |____info.html
+    | | |____table.html
+    |____configs
+    | |____coin_toss.conf
+    |____README.md
+    |____scripts
+    | |____deploy.sh
 
 ###(7) Open coin_toss.conf
 
