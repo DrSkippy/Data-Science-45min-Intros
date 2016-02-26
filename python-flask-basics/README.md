@@ -2,6 +2,8 @@
 
 ##Steps:
 
+##Part I - Get it running
+
 ###(1) Install a web server
 
 This is the application that runs in the background and processes HTTP protocol requests.  For
@@ -57,6 +59,8 @@ For example, my file:
     ./deploy.sh
 
 If all goes well, you shouldn't see any errors.
+
+##Part II - See how it works
 
 ###(6) Rejoice!
 
