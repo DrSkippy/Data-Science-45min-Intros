@@ -15,22 +15,19 @@ from logging.handlers import SysLogHandler
 app = Flask(__name__)
 
 # log Flask events
-app.logger.setLevel(logging.DEBUG)
 # address for OSX
 handler = SysLogHandler(address='/var/run/syslog')
 handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
+app.logger.setLevel(logging.DEBUG)
 
-app.logger.debug(u"Flask server started " + time.asctime())
+##############
 
+# this doesn't log... why?
 @app.after_request
 def write_access_log(response):
     app.logger.debug(u"%s %s --> %s" % (time.asctime(), request.path, response.status_code))
     return response
-
-@app.teardown_appcontext
-def shutdown_session(exception=None):
-    pass
 
 ##############
 
@@ -176,7 +173,12 @@ def table_data(k=5, n=10, p=0.5):
         for col in res:
             r.append(col[row])
         rows.append(r)
-    return render_template("table.html", rows=rows)
+    # cell background colors
+    color={
+            0 : "#AA4040"
+            , 1 : "#00AA00"
+            }
+    return render_template("table.html", rows=rows, color=color)
 
 @app.route('/ensemble/csv')
 def csv_data(k=5, n=10, p=0.5):

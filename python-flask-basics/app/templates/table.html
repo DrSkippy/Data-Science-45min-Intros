@@ -5,7 +5,7 @@
 {% for row in rows %}
 <tr>
     {% for c in row %}
-        <td>{{c}}</td>
+    <td bgcolor="{{color[c]}}">{{c}}</td>
     {% endfor %}
 </tr>
 {% endfor %}
