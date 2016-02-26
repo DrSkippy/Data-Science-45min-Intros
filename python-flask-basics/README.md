@@ -64,29 +64,14 @@ for rapidly deploying the code, configs and restarting the web server with the n
     | |____deploy.sh
 
 
-Let's start with the deploy scrip:
+###(7) Follow through the files
 
-    #!/usr/bin/env bash
+* Start with deploy.sh
+* Open coin_toss.conf
+* Open coin_toss.fcgi
+* open coin_toss.py
 
-    echo $(date)
-
-    rm -r /opt/twitter/var/www/coin_toss
-    cp -r ../app /opt/twitter/var/www/coin_toss
-
-    /opt/twitter/var/www/coin_toss/coin_toss.fcgi &
-
-    sudo cp ../configs/*.conf /opt/twitter/etc/nginx/servers
-
-    sudo nginx -s stop
-    sudo nginx
-
-###(7) Open coin_toss.conf
-
-###(8) Open coin_toss.fcgi
-
-###(9) open coin_toss.py
-
-###(10) Try the APIs
+###(8) Try the APIs
 
     http://localhost:8090/coin_toss/info
     http://localhost:8090/coin_toss/ensemble
