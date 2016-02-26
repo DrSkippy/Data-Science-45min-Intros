@@ -66,20 +66,20 @@ for rapidly deploying the code, configs and restarting the web server with the n
 
 ###(7) Follow through the files
 
-* Start with deploy.sh
+* Start by opening deploy.sh
 * Open coin_toss.conf
 * Open coin_toss.fcgi
 * open coin_toss.py
 
 ###(8) Try the APIs
 
-    http://localhost:8090/coin_toss/info
-    http://localhost:8090/coin_toss/ensemble
-    http://localhost:8090/coin_toss/ensemble/summary
-    http://localhost:8090/coin_toss/plot/demo.png
-    http://localhost:8090/coin_toss/hist/100_100_500.png
-    http://localhost:8090/coin_toss/ensemble/table
-    http://localhost:8090/coin_toss/ensemble/csv
+* http://localhost:8090/coin_toss/info
+* http://localhost:8090/coin_toss/ensemble
+* http://localhost:8090/coin_toss/ensemble/summary
+* http://localhost:8090/coin_toss/plot/demo.png
+* http://localhost:8090/coin_toss/hist/100_100_500.png
+* http://localhost:8090/coin_toss/ensemble/table
+* http://localhost:8090/coin_toss/ensemble/csv
 
 
 
