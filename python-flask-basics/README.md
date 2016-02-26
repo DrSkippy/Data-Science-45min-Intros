@@ -2,7 +2,7 @@
 
 ##Steps:
 
-###(1) Install a web server.
+###(1) Install a web server
 
 This is the application that runs in the background and processes HTTP protocol requests.  For
 this demonstration, we will use the NGINX web server on our OSX laptops.
@@ -21,17 +21,17 @@ To start the server
 Now visit http://localhost:8080. You should get "Welcome to nginx!" message if everything went
 well.
 
-###(2) We need a gateway module for communication between our application and the web server.
+###(2) Install a gateway module for communication between our application and the web server
 For this example, we will use fastcgi.  To install this module,
 
     brew install fastcgi
 
-###(3) Install the application componenents
+###(3) Install the application requirements
     
     pip install numpy matplotlib
     pip install flask flup
 
-###(4) We need to set a user for the web server.
+###(4) We need to set a user for the web server
 The web server will run as a specified user. When the web server was installed, the default
 behavior is to run as "nobody". This won't work for us because "nobody" has the wrong permissions.
 (But that doesn't mean everybody has the right permissions!).
@@ -41,14 +41,15 @@ that starts "#user..." (line 3):
     
     user <your user name> staff;
 
-###(5) Move into the Scripts directory and deploy the applicaiton.
+###(5) Move into the Scripts directory and deploy the application
 
     cd scripts
     ./deploy.sh
 
 ###(6) Rejoice!
-To understand the workings of the code, follow along:
-
+To understand the workings of the code, follow along as we explore the application tree.  The gist of
+the structure is to keep everthing in an orderly github repository that includes scripts
+for rapidly deploying the code, configs and restarting the web server with the new configs.
 
     |____app
     | |____coin_toss.fcgi
@@ -61,6 +62,23 @@ To understand the workings of the code, follow along:
     |____README.md
     |____scripts
     | |____deploy.sh
+
+
+Let's start with the deploy scrip:
+
+    #!/usr/bin/env bash
+
+    echo $(date)
+
+    rm -r /opt/twitter/var/www/coin_toss
+    cp -r ../app /opt/twitter/var/www/coin_toss
+
+    /opt/twitter/var/www/coin_toss/coin_toss.fcgi &
+
+    sudo cp ../configs/*.conf /opt/twitter/etc/nginx/servers
+
+    sudo nginx -s stop
+    sudo nginx
 
 ###(7) Open coin_toss.conf
 
