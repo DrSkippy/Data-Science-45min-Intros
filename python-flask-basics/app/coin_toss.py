@@ -51,7 +51,7 @@ def trial(n=100, p=0.5):
     p = request.args.get("p", p, type=float)
     result = {
             "n" : n
-            , "result" : get_coin_trials(n, p)
+            , "result" : get_coin_trial(n, p)
             , "p_0" : p
             , "p_1" : 1.0-p
             }
