@@ -1,0 +1,12 @@
+# python3.5
+
+# base 
+numpy
+
+# misc
+jupyter
+sklearn
+mlxtend
+
+# charting 
+matplotlib
