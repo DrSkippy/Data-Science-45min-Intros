@@ -1,0 +1,17 @@
+# python3.5
+
+# math 
+numpy
+scipy
+Theano
+
+# modeling 
+sklearn
+keras
+
+# plotting 
+matplotlib
+seaborn
+
+# misc
+jupyter
