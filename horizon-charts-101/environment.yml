@@ -1,0 +1,82 @@
+name: horizon_charts_101
+dependencies:
+- _nb_ext_conf=0.3.0=py35_0
+- anaconda-client=1.5.1=py35_0
+- appnope=0.1.0=py35_0
+- bokeh=0.12.2=py35_0
+- clyent=1.2.2=py35_0
+- cycler=0.10.0=py35_0
+- decorator=4.0.10=py35_0
+- entrypoints=0.2.2=py35_0
+- freetype=2.5.5=1
+- icu=54.1=0
+- ipykernel=4.5.0=py35_0
+- ipython=5.1.0=py35_0
+- ipython_genutils=0.1.0=py35_0
+- ipywidgets=5.2.2=py35_0
+- jinja2=2.8=py35_1
+- jsonschema=2.5.1=py35_0
+- jupyter=1.0.0=py35_3
+- jupyter_client=4.4.0=py35_0
+- jupyter_console=5.0.0=py35_0
+- jupyter_core=4.2.0=py35_0
+- libpng=1.6.22=0
+- markupsafe=0.23=py35_2
+- matplotlib=1.5.1=np111py35_0
+- mistune=0.7.3=py35_1
+- mkl=11.3.3=0
+- nb_anacondacloud=1.2.0=py35_0
+- nb_conda=2.0.0=py35_0
+- nb_conda_kernels=2.0.0=py35_0
+- nbconvert=4.2.0=py35_0
+- nbformat=4.1.0=py35_0
+- nbpresent=3.0.2=py35_0
+- notebook=4.2.3=py35_0
+- numpy=1.11.1=py35_0
+- openssl=1.0.2i=0
+- pandas=0.18.1=np111py35_0
+- path.py=8.2.1=py35_0
+- pexpect=4.0.1=py35_0
+- pickleshare=0.7.4=py35_0
+- pip=8.1.2=py35_0
+- prompt_toolkit=1.0.3=py35_0
+- ptyprocess=0.5.1=py35_0
+- pygments=2.1.3=py35_0
+- pyparsing=2.1.4=py35_0
+- pyqt=4.11.4=py35_4
+- python=3.5.0=1
+- python-dateutil=2.5.3=py35_0
+- python.app=1.2=py35_4
+- pytz=2016.6.1=py35_0
+- pyyaml=3.12=py35_0
+- pyzmq=15.4.0=py35_0
+- qt=4.8.7=4
+- qtconsole=4.2.1=py35_0
+- readline=6.2=2
+- requests=2.11.1=py35_0
+- setuptools=27.2.0=py35_0
+- simplegeneric=0.8.1=py35_1
+- sip=4.18=py35_0
+- six=1.10.0=py35_0
+- sqlite=3.13.0=0
+- terminado=0.6=py35_0
+- tk=8.5.18=0
+- tornado=4.4.1=py35_0
+- traitlets=4.3.0=py35_0
+- wcwidth=0.1.7=py35_0
+- wheel=0.29.0=py35_0
+- widgetsnbextension=1.2.6=py35_0
+- xz=5.0.5=1
+- yaml=0.1.6=0
+- zlib=1.2.8=3
+- pip:
+  - ipython-genutils==0.1.0
+  - jupyter-client==4.4.0
+  - jupyter-console==5.0.0
+  - jupyter-core==4.2.0
+  - nb-anacondacloud==1.2.0
+  - nb-conda==2.0.0
+  - nb-conda-kernels==2.0.0
+  - prompt-toolkit==1.0.3
+prefix: /Users/blehman/anaconda/envs/horizon_charts_101
+
