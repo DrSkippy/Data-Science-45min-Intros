@@ -99,6 +99,9 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [D3 and Javascript Intro](d3-101)
 
+- [D3 reusable charts: Heatmap](d3-201)
+
 - [Real Time Data - Websockets Intro](websockets-101)
 
+- [Introduction to horizon charts](horizon-charts-101)
 
