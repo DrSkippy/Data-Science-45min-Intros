@@ -1,4 +1,4 @@
-# Time Series Data In Pandas
+# Time Series Modeling in Python 
 
 *Josh Montague*
 
