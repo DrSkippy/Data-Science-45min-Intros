@@ -5,13 +5,13 @@
 
 A short and basic introduction to the ``sklearn`` API interface and a couple of very simple examples of using an estimator on some built-in sample data (k-nearest neighbors and linear regression).  
 
-This session was built using: 
+This notebook was built with: 
 
-- Python 2.7 
-- IPython 1.2
-- matplotlib 1.3
-- numpy 1.8
-- sklearn 0.14
+- Python 3.6  
+- Jupyter 1.0 
+- matplotlib 2.0
+- numpy 1.12
+- sklearn 0.0
 
 -----
 
