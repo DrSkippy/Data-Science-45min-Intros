@@ -13,6 +13,16 @@ This session was built using:
 - matplotlib 1.4
 - seaborn 0.5
 
+2017-05, update:
+
+This notebook should run with versions:
+- Python 3.6
+- Juptyer 1.0
+- scikit-learn 0.18 
+- numpy 1.12
+- scipy 0.19
+- matplotlib 2.0 
+- seaborn 0.7 
 
 Enjoy! 
 
