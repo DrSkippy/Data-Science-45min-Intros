@@ -13,20 +13,6 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 ## Current topics
 
-### SQL
-
-- [SQL 201 - script-based data and queries](SQL-201)
-
-
-### Bash + command-line tools
-
-- [Using ``jq``](jq-102) 
-
-- [Bash data structures](bash-201)
-
-- [Regular expressions](regex-101)
-
-
 ### Python
 
 - [Object oriented programming concepts + modules/packaging](python-oop-101)
@@ -41,6 +27,21 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Introduction to ``multiprocessing``](python_multiprocessing)
 
+- [Python decorators](python-decorators-101)
+
+- [Python Interfaces](python-interfaces)
+
+- [Python logging](python-logging-201)
+
+
+### Bash + command-line tools
+
+- [Using ``jq``](jq-102) 
+
+- [Bash data structures](bash-201)
+
+- [Regular expressions](regex-101)
+
 
 ### Statistics
 
@@ -54,18 +55,26 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Error statistics](error_statistics-101)
 
-- [Network statistics + igraph](network-igraph-101)
+- [Classical statistics applied to social data](classical-stats-and-social-data-101)
 
-- [Network metrics](networks-201)
+- [Meaningful comparisons of ordered lists](comparing-collections)
 
-- [Network metrics II](networks-202)
+- [Counting and Maximum Likelihood Estimation](counting-and-MLEs)
+
+- [Estimating the number of classes in a population](estimating_classes)
+
+- [Long Tail Distributions I](long-tail-distributions-001)
+
+- [Long Tail Distributions II](long-tail-distributions-002)
+
+- [Maximum Likelihood Parameter Estimation](max-likelihood-doodle)
+
+- [Probabilty graph models](probgraphmodels-101)
 
 
 ### Machine Learning
 
 - [Intro to ``scikit-learn``](sklearn-101)
-
-- [Intro to topic modeling](topic-modeling-101)
 
 - [Introduction to K-means clustering](k-means-101)
 
@@ -89,10 +98,59 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 
 - [Text Mining with ``sklearn``](text-mining-with-sklearn-101)
 
+- [Bandit Algorithms](bandit-algorithms-101)
+
+- [Kernel smoothing](kernel_smoothing)
+
+- [Neural Networks I](neural-networks-101)
+
+- [Neural Networks II](neural-networks-201)
+
+
+### Natural Langugage Processing
+
+- [Intro to topic modeling](topic-modeling-101)
+
+- [More on topic modeling & a practical example](topic-modeling-201)
+
+- [Part of speech tagging](pos-tagging)
+
+- [Text processing](text-101)
+
+- [Word vector spaces](vector-spaces)
+
+
+### Network structure
+
+- [Network statistics + igraph](network-igraph-101)
+
+- [Network analysis: using null models](networks-201)
+
+- [Network analysis: community structures](networks-202)
+
+- [Network analysis: centrality metrics](networks-203)
+
+
+### Algorithms
+
+- [Count min sketch](count-min-101)
+
+
+### Engineering
+
+- [Refactoring](refactoring-101)
+
 
 ### Geographic Information Systems
 
 - [Shapefile utilties + reverse geo coding (and Makefile)](gis-tools-101)
+
+
+### Web development
+
+- [Websockets](websockets-101)
+
+- [Python + Flask basics](python-flask-basics)
 
 
 ### Visualization
@@ -104,4 +162,15 @@ Feel free to use these for your own (or your team's) growth, and do submit pull 
 - [Real Time Data - Websockets Intro](websockets-101)
 
 - [Introduction to horizon charts](horizon-charts-101)
+
+- [Bokeh](Bokeh)
+
+- [Matplotlib - Graphing for science in Python](matplotlib-201)
+
+
+### Databases
+
+- [SQL 201 - script-based data and queries](SQL-201)
+
+- [Vertica](vertica-101)
 
