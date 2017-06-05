@@ -8,4 +8,4 @@
 - numpy (I used 1.12.1)
 - matplotlib (I used 2.0.2) 
 
-### And: a file of example Tweets named example_tweets.json
+**And**: a file of example Tweets named "example_tweets.json"
