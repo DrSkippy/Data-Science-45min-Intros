@@ -1,5 +1,7 @@
 # Data Science 45-min Intros
 
+<a href="https://notebooks.azure.com/import/gh/DrSkippy/Data-Science-45min-Intros"><img src="https://notebooks.azure.com/launch.png" /></a>
+
 Every week\*, our data science team [@Gnip](https://twitter.com/gnip) (aka [@TwitterBoulder](https://twitter.com/twitterboulder)) gets together for about 50 minutes to learn something. 
 
 While these started as opportunities to collectively "raise the tide" on common stumbling blocks in data munging and analysis tasks, they have since grown to machine learning, statistics, and general programming topics. Anything that will help us do our jobs better is fair game. 
